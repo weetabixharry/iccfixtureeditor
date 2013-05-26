@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns:local="clr-namespace:Fixtures"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Title="ICC Fixture Editor" Height="600" Width="800" MinHeight="525" MinWidth="700"
+        Title="ICC Fixture Editor" Height="590" Width="800" MinHeight="525" MinWidth="700"
         Icon="resources/Application.png">
 
     <Window.Resources>
@@ -501,28 +501,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     MinWidth="75"/>
                 <DataGridComboBoxColumn
                     Header="Type"
-                    SelectedItemBinding="{Binding Type}"
+                    SelectedItemBinding="{Binding Type, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{x:Static local:MatchType.Types}"
                     CellStyle="{StaticResource LeftAlignedCellStyle}"
                     MinWidth="130"/>
                 <DataGridTextColumn
                     Header="Match" 
-                    Binding="{Binding MatchInSeries}" 
+                    Binding="{Binding MatchInSeries, UpdateSourceTrigger=PropertyChanged}" 
                     CellStyle="{StaticResource RightAlignedCellStyle}"
                     MinWidth="55"/>
                 <DataGridTextColumn 
                     Header="Series" 
-                    Binding="{Binding SeriesLength}" 
+                    Binding="{Binding SeriesLength, UpdateSourceTrigger=PropertyChanged}" 
                     CellStyle="{StaticResource RightAlignedCellStyle}"
                     MinWidth="55"/>
                 <DataGridComboBoxColumn
                     Header="Host"
-                    SelectedItemBinding="{Binding HostTeam}"
+                    SelectedItemBinding="{Binding HostTeam, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
                 <DataGridComboBoxColumn
                     Header="Visitor"
-                    SelectedItemBinding="{Binding VisitorTeam}"
+                    SelectedItemBinding="{Binding VisitorTeam, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
             </DataGrid.Columns>
