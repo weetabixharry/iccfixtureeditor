@@ -1,0 +1,98 @@
+WI 0x32
+AUS 0x2B
+ENG 0x2C
+NZ 0x2E
+PAK 0x2F
+SL 0x31
+SA 0x30
+IND 0x2D
+BAN 0x33
+ZIM 0x34
+
+T20 World Cup
+SL 155
+ZIM 157
+AUS 152
+IRE 154
+IND 150
+AFG 151
+SA 156
+NZ 159	
+BAN 160
+ENG 149
+WI 153
+PAK 158
+Super 8 - teams numbered 0x20 to 0x27
+Semifinal 1 - 0x88 vs 0x00
+Semifinal 2 - 0x88 vs 0x01
+Final - 0x86 vs 0x00
+
+ODI World Cup
+ENG 133
+SL 135
+AUS 140
+NZ 142
+BAN 137
+IRE 138
+ZIM 144
+NETH 145
+SA 134
+KEN 139
+IND 141
+UAE 146
+PAK 136
+WI 143
+
+ODI Tournament (Australia)
+Final - 0x86 vs 0x00 (all 3 matches)
+
+Test 0x0C
+ODI 0x0D
+T20I 0x12
+ODI World Cup 0x09
+T20 World Cup 0x0A
+ODI Tri-Series 0x0B
+Three day Friendly 0x0E
+One Day Friendly 0x0F
+University Match 0x11
+FC England 0x00
+OD England 0x07
+T20 England 0x03
+ 
+FC counties
+Lancashire 301
+Warwickshire 302
+Durham
+Somerset 304
+Sussex 305
+Nottinghamshire 306
+Worcestershire 307
+Middlesex 308
+Surrey 309
+Yorkshire 310
+Hampshire 311
+Northamptonshire 312
+Gloucestershire 313
+Derbyshire 314
+Glamorgan 315
+Essex 316
+Kent 317
+Leicestershire 318
+
+MCC 167
+
+Loughboro UCCE 185
+Durham UCCE 186
+Leeds UCCE 187
+Cardiff UCCE 188
+Oxford UCCE 189
+Cambridge UCCE 190
+
+Guyana 0x32
+Mashonaland 0x34
+Chittagong 0x33
+Sinhalese 0x31
+Karnataka 0x2D
+Mumbai 0x2D
+Dhaka 0x33 
+Singha 0x31
