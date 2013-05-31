@@ -61,6 +61,27 @@ namespace Fixtures.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FF
+        ///FF
+        ///01
+        ///00
+        ///09
+        ///00
+        ///43
+        ///72
+        ///46
+        ///69
+        ///78
+        ///74
+        ///75.
+        /// </summary>
+        internal static string FirstMatchHeader {
+            get {
+                return ResourceManager.GetString("FirstMatchHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The MIT License (MIT)
         ///
         ///Copyright (c) &lt;year&gt; &lt;copyright holders&gt;
@@ -132,26 +153,26 @@ namespace Fixtures.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to County Championship,00,4
-        ///Clydesdale Bank 40,02,1
-        ///Friends Life T20,03,1
-        ///Sheffield Shield,04,4
-        ///Ryobi One Day Cup,05,1
-        ///Big Bash League,06,1
-        ///Indian Premier League,07,1
-        ///Overseas League (T20 GEN),08,1
-        ///World Cup,09,1
-        ///World T20,0A,1
+        ///   Looks up a localized string similar to #FC GEN,14,4
+        ///#OD GEN,13,1
+        ///#Overseas League (T20 GEN),8,1
+        ///#T20 GEN,15,1
+        ///Big Bash League,6,1
+        ///Clydesdale Bank 40,2,1
         ///Commonwealth Bank Series,0B,1
-        ///Test Match,0C,5
-        ///One Day International,0D,1
-        ///Three Day Friendly,0E,3
+        ///County Championship,0,4
+        ///Friends Life T20,3,1
+        ///Indian Premier League,7,1
         ///One Day Friendly,0F,1
-        ///University Match,11,3
+        ///One Day International,0D,1
+        ///Ryobi One Day Cup,5,1
+        ///Sheffield Shield,4,4
         ///T20 International,12,1
-        ///OD GEN,13,1
-        ///FC GEN,14,4
-        ///T20 GEN,15,1
+        ///Test Match,0C,5
+        ///Three Day Friendly,0E,3
+        ///University Match,11,3
+        ///World Cup,9,1
+        ///World T20,0A,1
         ///.
         /// </summary>
         internal static string MatchTypes {
@@ -162,28 +183,29 @@ namespace Fixtures.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Australia,002B
+        ///Bangladesh,33
         ///England,002C
         ///India,002D
         ///New Zealand,002E
         ///Pakistan,002F
-        ///South Africa ,0030
-        ///Sri Lanka,0031
-        ///West Indies,0032
-        ///Bangladesh,0033
-        ///Zimbabwe,0034
+        ///South Africa ,30
+        ///Sri Lanka,31
+        ///West Indies,32
+        ///Zimbabwe,34
         ///Australia (World Cup),018C
-        ///England (World Cup),0185
+        ///Bangladesh (World Cup),189
+        ///England (World Cup),185
         ///India (World Cup),018D
-        ///New Zealand (World Cup),018E
-        ///Pakistan (World Cup),0188
-        ///South Africa  (World Cup),0186
-        ///Sri Lanka (World Cup),0187
-        ///West Indies (World Cup),018F
-        ///Bangladesh (World Cup),0189
-        ///Zimbabwe (World Cup),0190
         ///Ireland (World Cup),018A
         ///Kenya (World Cup),018B
-        ///Netherlands (World C [rest of string was truncated]&quot;;.
+        ///Netherlands (World Cup),191
+        ///New Zealand (World Cup),018E
+        ///Pakistan (World Cup),188
+        ///South Africa  (World Cup),186
+        ///Sri Lanka (World Cup),187
+        ///UAE (World Cup),192
+        ///West Indies (World Cup),018F
+        ///Zimbabwe (Wo [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Teams {
             get {

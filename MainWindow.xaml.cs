@@ -97,8 +97,7 @@ namespace Fixtures
         {
             Matches matches = (Matches)Resources["matches"];
             Match selectedMatch = (Match)matchGrid.SelectedItem;
-            // Don't support removing the first match in the file for now because it has special header info.
-            if (_fixtureFileMgr == null || selectedMatch == null || matches.Count < 2 || selectedMatch == matches[0])
+            if (_fixtureFileMgr == null || selectedMatch == null || matches.Count < 2)
                 return;            
             _fixtureFileMgr.RemoveMatch(selectedMatch);
             matches.Remove(selectedMatch);
@@ -263,13 +262,14 @@ namespace Fixtures
         private const Int32 DayDataLength = 6;
         private const Int32 MatchDataLength = 42;
         private const Int32 MatchRefLength = 2;
-        private const Int32 FirstMatchDataOffset = 13;
+        private const Int32 FirstMatchSpecialHeaderLength = 13;
         private const Int32 StartMatchId = 2;
 
         private readonly string _filePath;
         private readonly DateTime _dayZero;
         private List<Byte> _fileContents;
         private List<DayHeader> _dayHeaders;
+        private readonly List<Byte> _firstMatchSpecialHeader;
         private List<MatchHeader> _matchHeaders;
         private readonly List<Byte> _matchDataTemplate;
         private List<MatchRef> _matchRefs;
@@ -281,10 +281,12 @@ namespace Fixtures
             _dayZero = new DateTime(ParseStartYear(filePath), 3, 31);
             _fileContents = new List<byte>(File.ReadAllBytes(filePath)); // To do: Handle IO exceptions
             _dayHeaders = new List<DayHeader>();
+            _firstMatchSpecialHeader = new List<Byte>();
             _matchHeaders = new List<MatchHeader>();
             _matchDataTemplate = new List<Byte>(MatchDataLength);
             _matchRefs = new List<MatchRef>();
             _nextMatchId = StartMatchId;
+            InitializeFirstMatchHeader();
             InitializeMatchDataTemplate();
             InitializeHeadersAndRefs();
         }
@@ -361,6 +363,22 @@ namespace Fixtures
             DecrementNumMatches(startDayHeader);
 
             MatchHeader removeHeader = _matchHeaders.Where(h => h.Match == match).First();
+            
+            if (IsFirstMatch(removeHeader))
+            {
+                Int32 oldSpecialHeaderAddress = startDayHeader.StartAddress + DayDataLength;
+                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
+                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
+
+                // The second match in the file becomes the first match.
+                _matchHeaders.Sort((x, y) => x.StartAddress - y.StartAddress);
+                MatchHeader newFirstMatchHeader = _matchHeaders[1];
+                SetAsFirstMatch(newFirstMatchHeader);
+                Int32 newSpecialHeaderAddress = newFirstMatchHeader.StartAddress;
+                InsertFirstMatchSpecialHeader(newSpecialHeaderAddress);
+                AdjustAddressesAfter(newSpecialHeaderAddress, FirstMatchSpecialHeaderLength);
+            }
+
             RemoveMatchData(removeHeader.StartAddress);
             _matchHeaders.Remove(removeHeader);
             AdjustAddressesAfter(removeHeader.StartAddress, -MatchDataLength);
@@ -501,6 +519,20 @@ namespace Fixtures
             return startYear;
         }
 
+        private void InitializeFirstMatchHeader()
+        {
+            using (StringReader sr = new StringReader(Fixtures.Properties.Resources.FirstMatchHeader))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Byte val = Byte.Parse(line, System.Globalization.NumberStyles.HexNumber);
+                    _firstMatchSpecialHeader.Add(val);
+                }
+            }
+            Debug.Assert(_firstMatchSpecialHeader.Count == FirstMatchSpecialHeaderLength);
+        }
+
         private void InitializeMatchDataTemplate()
         {
             using (StringReader sr = new StringReader(Fixtures.Properties.Resources.MatchTemplate))
@@ -546,7 +578,7 @@ namespace Fixtures
                     if (firstMatch)
                     {
                         // First match is special. There is 13 leading filler bytes before the match data.
-                        currentAddress += FirstMatchDataOffset;
+                        currentAddress += FirstMatchSpecialHeaderLength;
                         firstMatch = false;
                         // Header bytes are different for first match.
                         Debug.Assert(_fileContents[currentAddress] == 0x72 && _fileContents[currentAddress + 1] == 0x65);
@@ -695,6 +727,16 @@ namespace Fixtures
             _fileContents.RemoveRange(removeAddress, MatchDataLength);
         }
 
+        private void InsertFirstMatchSpecialHeader(Int32 insertAddress)
+        {
+            _fileContents.InsertRange(insertAddress, _firstMatchSpecialHeader);
+        }
+
+        private void RemoveFirstMatchSpecialHeader(Int32 removeAddress)
+        {
+            _fileContents.RemoveRange(removeAddress, FirstMatchSpecialHeaderLength);
+        }
+
         private void CreateAndAddMatchRef(Match match, Int32 address)
         {
             MatchRef matchRef = new MatchRef(match.Id, address);
@@ -784,6 +826,17 @@ namespace Fixtures
             Int32 oldNumMatches = GetNextTwoBytes(dayHeader.AddressOfNumMatches);
             Debug.Assert(oldNumMatches >= 1);
             SetNextTwoBytes(dayHeader.AddressOfNumMatches, oldNumMatches - 1);
+        }
+
+        private bool IsFirstMatch(MatchHeader header)
+        {
+            return _fileContents[header.StartAddress] == 0x72 && _fileContents[header.StartAddress + 1] == 0x65;
+        }
+
+        private void SetAsFirstMatch(MatchHeader header)
+        {
+            _fileContents[header.StartAddress] = 0x72;
+            _fileContents[header.StartAddress + 1] = 0x65;
         }
 
         private DateTime GetMatchStartDate(MatchHeader header)
