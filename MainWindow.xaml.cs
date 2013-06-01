@@ -81,12 +81,7 @@ namespace Fixtures
             Match selectedMatch = (Match)matchGrid.SelectedItem;
             if (_fixtureFileMgr == null || selectedMatch == null || matches.Count < 2)
                 return;            
-            // If first match is selected insert above the second match. Don't use the first match
-            // because duplicating the first match has issues (first match has special header info).
-            if (selectedMatch == matches[0])
-            {
-                selectedMatch = matches[1];
-            }
+
             Match newMatch = _fixtureFileMgr.CreateAndAddNewMatch(selectedMatch.Date, selectedMatch.Type);
             matches.Insert(matches.IndexOf(selectedMatch), newMatch);
             _fixtureFileMgr.UpdateIds(matches);
@@ -313,10 +308,19 @@ namespace Fixtures
             IncrementNumMatches(startDayHeader);
 
             Int32 dataInsertAddress = startDayHeader.StartAddress + DayDataLength;
+            if (date == _firstMatch.Date)
+                dataInsertAddress += FirstMatchSpecialHeaderLength;
+
             AdjustAddressesAfter(dataInsertAddress, MatchDataLength);
             CreateAndAddMatchHeader(newMatch, dataInsertAddress);
             InsertMatchDataTemplate(dataInsertAddress);
             UpdateMatchData(newMatch);
+
+            if (date == _firstMatch.Date)
+            {
+                MatchHeader newHeader = _matchHeaders.Where(h => h.Match == newMatch).First();
+                SetFirstMatch(newHeader);
+            }
 
             Int32 startDay = ConvertToDay(date);
             Int32 endDay = startDay + type.NumDays - 1;
