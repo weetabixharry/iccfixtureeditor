@@ -81,13 +81,8 @@ namespace Fixtures
             Match selectedMatch = (Match)matchGrid.SelectedItem;
             if (_fixtureFileMgr == null || selectedMatch == null || matches.Count < 2)
                 return;            
-            // If first match is selected insert above the second match. Don't use the first match
-            // because duplicating the first match has issues (first match has special header info).
-            if (selectedMatch == matches[0])
-            {
-                selectedMatch = matches[1];
-            }
-            Match newMatch = _fixtureFileMgr.CreateAndAddNewMatch(selectedMatch.Date, selectedMatch.Type);
+
+            Match newMatch = _fixtureFileMgr.AddNewMatch(selectedMatch.Date, selectedMatch.Type);
             matches.Insert(matches.IndexOf(selectedMatch), newMatch);
             _fixtureFileMgr.UpdateIds(matches);
             matchGrid.SelectedItem = matchGrid.Items[matches.IndexOf(newMatch)];            
@@ -99,7 +94,7 @@ namespace Fixtures
             Match selectedMatch = (Match)matchGrid.SelectedItem;
             if (_fixtureFileMgr == null || selectedMatch == null || matches.Count < 2)
                 return;            
-            _fixtureFileMgr.RemoveMatch(selectedMatch);
+            _fixtureFileMgr.RemoveExistingMatch(selectedMatch);
             matches.Remove(selectedMatch);
             _fixtureFileMgr.UpdateIds(matches);            
         }
@@ -196,7 +191,7 @@ namespace Fixtures
             set
             {
                 _matchInSeries = value;
-                _manager.UpdateMatch(this, MatchProperty.MatchInSeries);
+                _manager.UpdateMatchProperty(this, MatchProperty.MatchInSeries);
                 NotifyPropertyChanged("MatchInSeries");
             }
         }
@@ -210,7 +205,7 @@ namespace Fixtures
             set
             {
                 _seriesLength = value;
-                _manager.UpdateMatch(this, MatchProperty.SeriesLength);
+                _manager.UpdateMatchProperty(this, MatchProperty.SeriesLength);
                 NotifyPropertyChanged("SeriesLength");
             }
         }
@@ -224,7 +219,7 @@ namespace Fixtures
             set
             {
                 _hostTeam = value;
-                _manager.UpdateMatch(this, MatchProperty.HostTeam);
+                _manager.UpdateMatchProperty(this, MatchProperty.HostTeam);
                 NotifyPropertyChanged("HostTeam");
             }
         }
@@ -235,7 +230,7 @@ namespace Fixtures
             set
             {
                 _visitorTeam = value;
-                _manager.UpdateMatch(this, MatchProperty.VisitorTeam);
+                _manager.UpdateMatchProperty(this, MatchProperty.VisitorTeam);
                 NotifyPropertyChanged("VisitorTeam");
             }
         }
@@ -305,131 +300,16 @@ namespace Fixtures
             return matches;
         }
 
-        public Match CreateAndAddNewMatch(DateTime date, MatchType type)
+        public Match AddNewMatch(DateTime date, MatchType type)
         {
             Match newMatch = CreateNewMatch(date, type);
-
-            DayHeader startDayHeader = GetDayHeader(date);
-            IncrementNumMatches(startDayHeader);
-
-            Int32 dataInsertAddress = startDayHeader.StartAddress + DayDataLength;
-            if (date == _firstMatch.Date)
-                dataInsertAddress += FirstMatchSpecialHeaderLength;
-
-            AdjustAddressesAfter(dataInsertAddress, MatchDataLength);
-            CreateAndAddMatchHeader(newMatch, dataInsertAddress);
-            InsertMatchDataTemplate(dataInsertAddress);
-            UpdateMatchData(newMatch);
-
-            if (date == _firstMatch.Date)
-            {
-                MatchHeader newHeader = _matchHeaders.Where(h => h.Match == newMatch).First();
-                SetFirstMatch(newHeader);
-            }
-
-            Int32 startDay = ConvertToDay(date);
-            Int32 endDay = startDay + type.NumDays - 1;
-            for (Int32 currDay = startDay + 1; currDay <= endDay; currDay++)
-            {
-                DayHeader currDayHeader = GetDayHeader(ConvertToDate(currDay));
-                IncrementNumMatches(currDayHeader);
-
-                Int32 refInsertAddress = currDayHeader.StartAddress + DayDataLength;
-                AdjustAddressesAfter(refInsertAddress, MatchRefLength);
-                CreateAndAddMatchRef(newMatch, refInsertAddress);
-                InsertMatchRefData(refInsertAddress, newMatch.Id);
-            }
-
+            AddMatch(newMatch);
             return newMatch;
         }
 
-        public void AddMatch(Match match)
+        public void RemoveExistingMatch(Match match)
         {
-            DayHeader startDayHeader = GetDayHeader(match.Date);
-            IncrementNumMatches(startDayHeader);
-
-            Int32 dataInsertAddress = startDayHeader.StartAddress + DayDataLength;
-            if (match.Date == _firstMatch.Date)
-                dataInsertAddress += FirstMatchSpecialHeaderLength;
-
-            AdjustAddressesAfter(dataInsertAddress, MatchDataLength);
-            CreateAndAddMatchHeader(match, dataInsertAddress);
-            InsertMatchDataTemplate(dataInsertAddress);
-            UpdateMatchData(match);
-
-            Int32 startDay = ConvertToDay(match.Date);
-            Int32 endDay = startDay + match.Type.NumDays - 1;
-            for (Int32 currDay = startDay + 1; currDay <= endDay; currDay++)
-            {
-                DayHeader currDayHeader = GetDayHeader(ConvertToDate(currDay));
-                IncrementNumMatches(currDayHeader);
-
-                Int32 refInsertAddress = currDayHeader.StartAddress + DayDataLength;
-                if (ConvertToDate(currDay) == _firstMatch.Date)
-                    refInsertAddress += FirstMatchSpecialHeaderLength;
-
-                AdjustAddressesAfter(refInsertAddress, MatchRefLength);
-                CreateAndAddMatchRef(match, refInsertAddress);
-                InsertMatchRefData(refInsertAddress, match.Id);
-            }
-
-            if (match.Date == _firstMatch.Date)
-            {
-                MatchHeader newMatchHeader = _matchHeaders.Where(h => h.Match == match).First();
-                SetFirstMatch(newMatchHeader);
-            }
-            else if (match.Date < _firstMatch.Date)
-            {
-                DayHeader oldFirstDayHeader = GetDayHeader(_firstMatch.Date);
-                Int32 oldSpecialHeaderAddress = oldFirstDayHeader.StartAddress + DayDataLength;
-                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
-                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
-
-                MatchHeader newMatchHeader = _matchHeaders.Where(h => h.Match == match).First();
-                InsertFirstMatchSpecialHeader(newMatchHeader.StartAddress);
-                AdjustAddressesAfter(newMatchHeader.StartAddress, FirstMatchSpecialHeaderLength);
-                SetFirstMatch(newMatchHeader);
-            }
-        }
-
-        public void RemoveMatch(Match match)
-        {
-            DayHeader startDayHeader = GetDayHeader(match.Date);
-            DecrementNumMatches(startDayHeader);
-
-            MatchHeader removeHeader = _matchHeaders.Where(h => h.Match == match).First();
-            
-            if (IsFirstMatch(match))
-            {
-                Int32 oldSpecialHeaderAddress = startDayHeader.StartAddress + DayDataLength;
-                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
-                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
-
-                // The second match in the file becomes the first match.
-                _matchHeaders.Sort((x, y) => x.StartAddress - y.StartAddress);
-                MatchHeader newFirstMatchHeader = _matchHeaders[1];
-                SetFirstMatch(newFirstMatchHeader);
-                Int32 newSpecialHeaderAddress = newFirstMatchHeader.StartAddress;
-                InsertFirstMatchSpecialHeader(newSpecialHeaderAddress);
-                AdjustAddressesAfter(newSpecialHeaderAddress, FirstMatchSpecialHeaderLength);
-            }
-
-            RemoveMatchData(removeHeader.StartAddress);
-            _matchHeaders.Remove(removeHeader);
-            AdjustAddressesAfter(removeHeader.StartAddress, -MatchDataLength);
-
-            Int32 startDay = ConvertToDay(match.Date);
-            Int32 endDay = startDay + match.Type.NumDays - 1;
-            for (Int32 currDay = startDay + 1; currDay <= endDay; currDay++)
-            {
-                DayHeader currDayHeader = GetDayHeader(ConvertToDate(currDay));
-                DecrementNumMatches(currDayHeader);
-
-                MatchRef currRef = _matchRefs.Where(r => r.Match == match).First(); //TODO: this is not that clean/clear. It works but rewrite
-                RemoveMatchRefData(currRef.StartAddress);
-                _matchRefs.Remove(currRef);
-                AdjustAddressesAfter(currRef.StartAddress, -MatchRefLength);
-            }
+            RemoveMatch(match);
         }
 
         public void UpdateIds(IEnumerable<Match> matches)
@@ -437,7 +317,7 @@ namespace Fixtures
             // UI must call this function after adding match because it's necessary to renumber the
             // matches. This is because the match ids must be ordered by the ordre of match definition
             // in the fxt file.
-            _matchHeaders.Sort((x, y) => x.StartAddress - y.StartAddress);
+            SortMatchHeaders();
             Int32 currentId = 2;
             foreach (var header in _matchHeaders)
             {
@@ -497,20 +377,14 @@ namespace Fixtures
             }
         }
 
-        public void UpdateMatch(Match match, MatchProperty property)
+        public void UpdateMatchProperty(Match match, MatchProperty property)
         {
             // Use First instead of FirstOrDefault because it really is exceptional if we are in here
             // but there are no match headers. Function should never be called if there is no match
             // trying to update.
-            MatchHeader header = _matchHeaders.Where(h => h.Id == match.Id).First();
+            MatchHeader header = GetMatchHeader(match);
             switch (property)
             {
-                case MatchProperty.Date:
-                    SetNextTwoBytes(header.AddressOfDay, ConvertToDay(match.Date));
-                    break;
-                case MatchProperty.Type:
-                    _fileContents[header.AddressOfType] = match.Type.Code;
-                    break;
                 case MatchProperty.MatchInSeries:
                     SetMatchInSeries(header, match.MatchInSeries);
                     break;
@@ -803,6 +677,101 @@ namespace Fixtures
             return new Match(parameters, this);
         }
 
+        // TODO: Break up this function into several pieces
+        private void AddMatch(Match match)
+        {
+            DayHeader startDayHeader = GetDayHeader(match.Date);
+            IncrementNumMatches(startDayHeader);
+
+            Int32 dataInsertAddress = startDayHeader.StartAddress + DayDataLength;
+            if (match.Date == _firstMatch.Date)
+            {
+                dataInsertAddress += FirstMatchSpecialHeaderLength;
+            }
+
+            AdjustAddressesAfter(dataInsertAddress, MatchDataLength);
+            CreateAndAddMatchHeader(match, dataInsertAddress);
+            InsertMatchDataTemplate(dataInsertAddress);
+            UpdateMatchData(match);
+
+            Int32 startDay = ConvertToDay(match.Date);
+            Int32 endDay = startDay + match.Type.NumDays - 1;
+            for (Int32 currDay = startDay + 1; currDay <= endDay; currDay++)
+            {
+                DayHeader currDayHeader = GetDayHeader(ConvertToDate(currDay));
+                IncrementNumMatches(currDayHeader);
+
+                Int32 refInsertAddress = currDayHeader.StartAddress + DayDataLength;
+                if (ConvertToDate(currDay) == _firstMatch.Date)
+                {
+                    refInsertAddress += FirstMatchSpecialHeaderLength;
+                }
+
+                AdjustAddressesAfter(refInsertAddress, MatchRefLength);
+                CreateAndAddMatchRef(match, refInsertAddress);
+                InsertMatchRefData(refInsertAddress, match.Id);
+            }
+
+            if (match.Date == _firstMatch.Date)
+            {
+                MatchHeader newMatchHeader = GetMatchHeader(match);
+                SetFirstMatch(newMatchHeader);
+            }
+            else if (match.Date < _firstMatch.Date)
+            {
+                DayHeader oldFirstDayHeader = GetDayHeader(_firstMatch.Date);
+                Int32 oldSpecialHeaderAddress = oldFirstDayHeader.StartAddress + DayDataLength;
+                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
+                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
+
+                MatchHeader newMatchHeader = GetMatchHeader(match);
+                InsertFirstMatchSpecialHeader(newMatchHeader.StartAddress);
+                AdjustAddressesAfter(newMatchHeader.StartAddress, FirstMatchSpecialHeaderLength);
+                SetFirstMatch(newMatchHeader);
+            }
+        }
+
+        // TODO: Break up this function into several pieces
+        private void RemoveMatch(Match match)
+        {
+            DayHeader startDayHeader = GetDayHeader(match.Date);
+            DecrementNumMatches(startDayHeader);
+
+            MatchHeader removeHeader = GetMatchHeader(match);
+
+            if (IsFirstMatch(match))
+            {
+                Int32 oldSpecialHeaderAddress = startDayHeader.StartAddress + DayDataLength;
+                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
+                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
+
+                // The second match in the file becomes the first match.
+                SortMatchHeaders();
+                MatchHeader newFirstMatchHeader = _matchHeaders[1];
+                SetFirstMatch(newFirstMatchHeader);
+                Int32 newSpecialHeaderAddress = newFirstMatchHeader.StartAddress;
+                InsertFirstMatchSpecialHeader(newSpecialHeaderAddress);
+                AdjustAddressesAfter(newSpecialHeaderAddress, FirstMatchSpecialHeaderLength);
+            }
+
+            RemoveMatchData(removeHeader.StartAddress);
+            _matchHeaders.Remove(removeHeader);
+            AdjustAddressesAfter(removeHeader.StartAddress, -MatchDataLength);
+
+            Int32 startDay = ConvertToDay(match.Date);
+            Int32 endDay = startDay + match.Type.NumDays - 1;
+            for (Int32 currDay = startDay + 1; currDay <= endDay; currDay++)
+            {
+                DayHeader currDayHeader = GetDayHeader(ConvertToDate(currDay));
+                DecrementNumMatches(currDayHeader);
+
+                MatchRef currRef = _matchRefs.Where(r => r.Match == match).First(); //TODO: this is not that clean/clear. It works but rewrite
+                RemoveMatchRefData(currRef.StartAddress);
+                _matchRefs.Remove(currRef);
+                AdjustAddressesAfter(currRef.StartAddress, -MatchRefLength);
+            }
+        }
+
         private void AdjustAddressesAfter(Int32 address, Int32 adjustment)
         {
             // Adjust all the headers and refs that are on or after the specified address. This is
@@ -821,6 +790,11 @@ namespace Fixtures
                 .Where(r => r.StartAddress >= address)
                 .ToList()
                 .ForEach(r => r.StartAddress += adjustment);
+        }
+
+        private void SortMatchHeaders()
+        {
+            _matchHeaders.Sort((x, y) => x.StartAddress - y.StartAddress);
         }
 
         private void UpdateMatchData(Match match)
@@ -1136,8 +1110,6 @@ namespace Fixtures
 
     public enum MatchProperty
     {
-        Date,
-        Type,
         MatchInSeries,
         SeriesLength,
         HostTeam,
