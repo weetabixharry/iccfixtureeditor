@@ -8,7 +8,7 @@
         <XmlDataProvider x:Key="aboutProvider" XPath="ApplicationInfo" IsAsynchronous="False" IsInitialLoadEnabled="True">
             <x:XData>
                 <ApplicationInfo xmlns="">
-                    <Link Uri="https://code.google.com/p/icc-fixture-editor/">Project Home</Link>
+                    <Link Uri="https://iccfixtureeditor.codeplex.com/">Project Home</Link>
                 </ApplicationInfo>
             </x:XData>
         </XmlDataProvider>
