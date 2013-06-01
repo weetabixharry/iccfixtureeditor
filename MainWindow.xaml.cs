@@ -158,9 +158,8 @@ namespace Fixtures
             }
             set
             {
-                // TODO: validation of date
                 DateTime oldDate = _date;
-                DateTime newDate = value;
+                DateTime newDate = GetValidDate(value);
                 _date = newDate;
                 _manager.UpdateMatchDate(this, oldDate, newDate);
                 NotifyPropertyChanged("Date");
@@ -249,6 +248,21 @@ namespace Fixtures
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        private DateTime GetValidDate(DateTime date)
+        {
+            DateTime result = date;
+            DateTime latestDate = _manager.LastDate.Subtract(new TimeSpan(_type.NumDays - 1, 0, 0, 0));
+            if (result < _manager.FirstDate)
+            {
+                result = _manager.FirstDate;
+            }
+            else if (result > latestDate)
+            {
+                result = latestDate;
+            }
+            return result;
+        }
     }
 
     public class FixtureFileManager
@@ -262,6 +276,8 @@ namespace Fixtures
 
         private readonly string _filePath;
         private readonly DateTime _dayZero;
+        private readonly DateTime _firstDate;
+        private readonly DateTime _lastDate;
         private List<Byte> _fileContents;
         private List<DayHeader> _dayHeaders;
         private readonly List<Byte> _firstMatchSpecialHeader;
@@ -275,6 +291,9 @@ namespace Fixtures
         {
             _filePath = filePath;
             _dayZero = new DateTime(ParseStartYear(filePath), 3, 31);
+            _firstDate = new DateTime(ParseStartYear(filePath), 4, 1);
+            _lastDate = new DateTime(ParseStartYear(filePath) + 1, 3, 30);
+
             _fileContents = new List<byte>(File.ReadAllBytes(filePath)); // To do: Handle IO exceptions
             _dayHeaders = new List<DayHeader>();
             _firstMatchSpecialHeader = new List<Byte>();
@@ -282,9 +301,20 @@ namespace Fixtures
             _matchDataTemplate = new List<Byte>(MatchDataLength);
             _matchRefs = new List<MatchRef>();
             _nextMatchId = StartMatchId;
+
             InitializeFirstMatchHeader();
             InitializeMatchDataTemplate();
             InitializeHeadersAndRefs();
+        }
+
+        public DateTime FirstDate
+        {
+            get { return _firstDate; }
+        }
+
+        public DateTime LastDate
+        {
+            get { return _lastDate; }
         }
 
         public IEnumerable<Match> CreateMatchesFromFile()
