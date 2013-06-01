@@ -273,6 +273,7 @@ namespace Fixtures
         private List<MatchHeader> _matchHeaders;
         private readonly List<Byte> _matchDataTemplate;
         private List<MatchRef> _matchRefs;
+        private Match _firstMatch;
         private Int32 _nextMatchId;
 
         public FixtureFileManager(String filePath) 
@@ -300,6 +301,7 @@ namespace Fixtures
                 SetMatchForHeaderAndRefs(header, match);
                 matches.Add(match);
             }
+            _firstMatch = matches[0];
             return matches;
         }
 
@@ -338,6 +340,9 @@ namespace Fixtures
             IncrementNumMatches(startDayHeader);
 
             Int32 dataInsertAddress = startDayHeader.StartAddress + DayDataLength;
+            if (match.Date == _firstMatch.Date)
+                dataInsertAddress += FirstMatchSpecialHeaderLength;
+
             AdjustAddressesAfter(dataInsertAddress, MatchDataLength);
             CreateAndAddMatchHeader(match, dataInsertAddress);
             InsertMatchDataTemplate(dataInsertAddress);
@@ -351,9 +356,30 @@ namespace Fixtures
                 IncrementNumMatches(currDayHeader);
 
                 Int32 refInsertAddress = currDayHeader.StartAddress + DayDataLength;
+                if (ConvertToDate(currDay) == _firstMatch.Date)
+                    refInsertAddress += FirstMatchSpecialHeaderLength;
+
                 AdjustAddressesAfter(refInsertAddress, MatchRefLength);
                 CreateAndAddMatchRef(match, refInsertAddress);
                 InsertMatchRefData(refInsertAddress, match.Id);
+            }
+
+            if (match.Date == _firstMatch.Date)
+            {
+                MatchHeader newMatchHeader = _matchHeaders.Where(h => h.Match == match).First();
+                SetFirstMatch(newMatchHeader);
+            }
+            else if (match.Date < _firstMatch.Date)
+            {
+                DayHeader oldFirstDayHeader = GetDayHeader(_firstMatch.Date);
+                Int32 oldSpecialHeaderAddress = oldFirstDayHeader.StartAddress + DayDataLength;
+                RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
+                AdjustAddressesAfter(oldSpecialHeaderAddress, -FirstMatchSpecialHeaderLength);
+
+                MatchHeader newMatchHeader = _matchHeaders.Where(h => h.Match == match).First();
+                InsertFirstMatchSpecialHeader(newMatchHeader.StartAddress);
+                AdjustAddressesAfter(newMatchHeader.StartAddress, FirstMatchSpecialHeaderLength);
+                SetFirstMatch(newMatchHeader);
             }
         }
 
@@ -364,7 +390,7 @@ namespace Fixtures
 
             MatchHeader removeHeader = _matchHeaders.Where(h => h.Match == match).First();
             
-            if (IsFirstMatch(removeHeader))
+            if (IsFirstMatch(match))
             {
                 Int32 oldSpecialHeaderAddress = startDayHeader.StartAddress + DayDataLength;
                 RemoveFirstMatchSpecialHeader(oldSpecialHeaderAddress);
@@ -373,7 +399,7 @@ namespace Fixtures
                 // The second match in the file becomes the first match.
                 _matchHeaders.Sort((x, y) => x.StartAddress - y.StartAddress);
                 MatchHeader newFirstMatchHeader = _matchHeaders[1];
-                SetAsFirstMatch(newFirstMatchHeader);
+                SetFirstMatch(newFirstMatchHeader);
                 Int32 newSpecialHeaderAddress = newFirstMatchHeader.StartAddress;
                 InsertFirstMatchSpecialHeader(newSpecialHeaderAddress);
                 AdjustAddressesAfter(newSpecialHeaderAddress, FirstMatchSpecialHeaderLength);
@@ -828,15 +854,20 @@ namespace Fixtures
             SetNextTwoBytes(dayHeader.AddressOfNumMatches, oldNumMatches - 1);
         }
 
-        private bool IsFirstMatch(MatchHeader header)
+        private bool IsFirstMatch(Match match)
         {
-            return _fileContents[header.StartAddress] == 0x72 && _fileContents[header.StartAddress + 1] == 0x65;
+            return match == _firstMatch;
         }
 
-        private void SetAsFirstMatch(MatchHeader header)
+        private void SetFirstMatch(MatchHeader newHeader)
         {
-            _fileContents[header.StartAddress] = 0x72;
-            _fileContents[header.StartAddress + 1] = 0x65;
+            // Unmark the old first match and mark the new first match
+            MatchHeader oldHeader = _matchHeaders.Where(h => h.Match == _firstMatch).First();
+            _fileContents[oldHeader.StartAddress] = 0x01;
+            _fileContents[oldHeader.StartAddress + 1] = 0x80;
+            _fileContents[newHeader.StartAddress] = 0x72;
+            _fileContents[newHeader.StartAddress + 1] = 0x65;
+            _firstMatch = newHeader.Match;
         }
 
         private DateTime GetMatchStartDate(MatchHeader header)
