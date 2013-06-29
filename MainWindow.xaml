@@ -62,9 +62,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" LastChildFill="True">
-            <Image Source="resources/file.png" Width="32" Height="32" Margin="3"/>
-            <TextBox Name="FilePath" Focusable="False" VerticalAlignment="Center" Margin="3" Padding="3"/>
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            
+            <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+                <Image Source="resources/file.png" Width="32" Height="32" Margin="3"/>
+                <TextBox Name="FilePath" Focusable="False" VerticalAlignment="Center" Margin="3" Padding="3"/>
+            </DockPanel>
         </DockPanel>
 
         <Grid Grid.Row="1" Grid.Column="0" >
@@ -72,9 +75,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                 <Button Name="OpenButton" Click="OpenButton_Click" Style="{StaticResource buttonStyle}">
                     <StackPanel Orientation="Horizontal">
@@ -100,7 +104,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         <Label Content="Remove" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
+                <GroupBox Header="Version">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton GroupName="Version" IsChecked="True">2012</RadioButton>
+                        <RadioButton GroupName="Version" >2013 (Experimental)</RadioButton>
+                    </StackPanel>
+                </GroupBox>
             </StackPanel>
+            
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="AboutButton" Click="AboutButton_Click" Style="{StaticResource buttonStyle}">
                     <StackPanel Orientation="Horizontal">
