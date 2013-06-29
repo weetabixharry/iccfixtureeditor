@@ -1,0 +1,123 @@
+Australia,002B
+Bangladesh,0033
+England,002C
+India,002D
+New Zealand,002E
+Pakistan,002F
+South Africa ,0030
+Sri Lanka,0031
+West Indies,0032
+Zimbabwe,0034
+Australia (World Cup),018C
+Bangladesh (World Cup),0189
+Canada (World Cup),0191
+England (World Cup),0185
+India (World Cup),018D
+Namibia (World Cup),0192
+New Zealand (World Cup),0188
+Pakistan (World Cup),0187
+Scotland (World Cup),018B
+South Africa  (World Cup),0186
+Sri Lanka (World Cup),018E
+UAE (World Cup),018A
+West Indies (World Cup),018F
+Zimbabwe (World Cup),0190
+Australia (World T20),0199
+Bangladesh (World T20),019D
+England (World T20),0198
+India (World T20),019C
+Netherlands (World T20I),019A
+New Zealand (World T20),019E
+Pakistan (World T20),0196
+Scotland (World T20I),0197
+South Africa  (World T20),0195
+Sri Lanka (World T20),019F
+West Indies (World T20),019B
+Zimbabwe (World T20),01A0
+Derbyshire,0134
+Durham,0132
+Essex,013A
+Glamorgan,013B
+Gloucestershire,013E
+Hampshire,0139
+Kent,0138
+Lancashire,0136
+Leicestershire,013C
+Middlesex,012F
+Northamptonshire,013D
+Nottinghamshire,0131
+Somerset,012E
+Surrey,0133
+Sussex,0130
+Warwickshire,012D
+Worcestershire,0137
+Yorkshire,0135
+MCC (Three Day Friendly),00A7
+Cambridge UCCE (University Match),00BE
+Cardiff UCCE (University Match),00BC
+Durham UCCE (University Match),00BA
+Leeds UCCE (University Match),00BB
+Loughboro UCCE (University Match),00B9
+Oxford UCCE (University Match),00BD
+Derbyshire (Clydesdale Bank 40),015B
+Durham (Clydesdale Bank 40),015C
+Essex (Clydesdale Bank 40),015D
+Glamorgan (Clydesdale Bank 40),0162
+Gloucestershire (Clydesdale Bank 40),0163
+Hampshire (Clydesdale Bank 40),015E
+Kent (Clydesdale Bank 40),0154
+Lancashire (Clydesdale Bank 40),015F
+Leicestershire (Clydesdale Bank 40),0164
+Middlesex (Clydesdale Bank 40),0165
+Netherlands CC (Clydesdale Bank 40),0155
+Northamptonshire (Clydesdale Bank 40),0156
+Nottinghamshire (Clydesdale Bank 40),0157
+Scotland CC (Clydesdale Bank 40),0160
+Somerset (Clydesdale Bank 40),0166
+Surrey (Clydesdale Bank 40),0161
+Sussex (Clydesdale Bank 40),0158
+Unicorns (Clydesdale Bank 40),0167
+Warwickshire (Clydesdale Bank 40),0159
+Worcestershire (Clydesdale Bank 40),015A
+Yorkshire (Clydesdale Bank 40),0168
+Derbyshire (Friends Life T20),0001
+Durham (Friends Life T20),0002
+Essex (Friends Life T20),0003
+Glamorgan (Friends Life T20),0004
+Gloucestershire (Friends Life T20),0005
+Hampshire (Friends Life T20),0006
+Kent (Friends Life T20),0007
+Lancashire (Friends Life T20),0008
+Leicestershire (Friends Life T20),0009
+Middlesex (Friends Life T20),000A
+Northamptonshire (Friends Life T20),000B
+Nottinghamshire (Friends Life T20),000C
+Somerset (Friends Life T20),000D
+Surrey (Friends Life T20),000E
+Sussex (Friends Life T20),000F
+Warwickshire (Friends Life T20),0010
+Worcestershire (Friends Life T20),0011
+Yorkshire (Friends Life T20),0012
+New South Wales,0035
+Queensland,0036
+South Australia,0037
+Tasmania,0038
+Victoria,0039
+Western Australia,003A
+Adelaide (Big Bash League),00CC
+Brisbane (Big Bash League),00CD
+Hobart (Big Bash League),00CE
+Melbourne Green (Big Bash League),00D0
+Melbourne Red (Big Bash League),00CF
+Perth (Big Bash League),00D1
+Sydney Green (Big Bash League),00D3
+Sydney Red (Big Bash League),00D2
+Bangalore (Indian Premier League),00C8
+Chennai (Indian Premier League),00C9
+Delhi (Indian Premier League),00C3
+Hyderabad (Indian Premier League),00C2
+Kolkata (Indian Premier League),00C6
+Mumbai (Indian Premier League),00C5
+Pune (Indian Premier League),00CA
+Punjab (Indian Premier League),00C4
+Rajasthan (Indian Premier League),00C7
