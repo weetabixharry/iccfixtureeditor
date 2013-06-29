@@ -104,6 +104,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FixtureFileManager.cs" />
+    <Compile Include="FixtureFileManagerHelper.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="MatchType.cs" />
+    <Compile Include="Team.cs" />
     <Compile Include="WPFAboutBox1.xaml.cs">
       <DependentUpon>WPFAboutBox1.xaml</DependentUpon>
     </Compile>
