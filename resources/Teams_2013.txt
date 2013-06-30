@@ -53,6 +53,8 @@ Warwickshire,012D
 Worcestershire,0137
 Yorkshire,0135
 MCC,00A7
+Ireland CC,0014
+Scotland CC,0015
 Cambridge UCCE,00BE
 Cardiff UCCE,00BC
 Durham UCCE,00BA
