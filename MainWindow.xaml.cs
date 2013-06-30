@@ -97,6 +97,18 @@ namespace Fixtures
             _fixtureFileMgr.UpdateIds(matches);            
         }
 
+        private void Version2012_Checked(object sender, RoutedEventArgs e)
+        {
+            MatchType.LoadTypes(2012);
+            Team.LoadTeams(2012);
+        }
+
+        private void Version2013_Checked(object sender, RoutedEventArgs e)
+        {
+            MatchType.LoadTypes(2013);
+            Team.LoadTeams(2013);
+        }
+
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             // Uses a constructor that takes a parent window for the AboutBox.

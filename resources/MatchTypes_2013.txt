@@ -1,7 +1,6 @@
 Big Bash League,06,1
 Champions Trophy,0E,1
 Clydesdale Bank 40,02,1
-Commonwealth Bank Series,0B,1
 County Championship,00,4
 Friends Life T20,03,1
 Indian Premier League,07,1
@@ -12,7 +11,7 @@ Sheffield Shield,04,4
 T20 International,13,1
 Test Match,0C,5
 Three Day Friendly,0F,3
-Triangular Series,0B,1
+ODI Triangular,0B,1
 University Match,12,3
 World Cup,09,1
 World T20,0A,1

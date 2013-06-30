@@ -108,6 +108,11 @@
     <Compile Include="FixtureFileManagerHelper.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="MatchType.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Team.cs" />
     <Compile Include="WPFAboutBox1.xaml.cs">
       <DependentUpon>WPFAboutBox1.xaml</DependentUpon>
@@ -141,11 +146,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -153,8 +153,8 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,7 +162,6 @@
     </None>
     <AppDesigner Include="Properties\" />
     <Resource Include="resources\AboutLogo.png" />
-    <Resource Include="resources\Teams.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\Application.ico" />
@@ -178,9 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\MatchTypes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\Add.png" />
@@ -224,6 +220,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\MatchTypes_2012.txt" />
+    <Resource Include="resources\MatchTypes_2013.txt" />
+    <Resource Include="resources\Teams_2012.txt" />
+    <Resource Include="resources\Teams_2013.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

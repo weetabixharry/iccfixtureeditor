@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -25,17 +26,6 @@ namespace Fixtures
         {
             TBD = new Team("T.B.D.", 0);
             _teams = new List<Team>();
-            using (StringReader sr = new StringReader(Fixtures.Properties.Resources.Teams))
-            {
-                while (sr.Peek() >= 0)
-                {
-                    string[] row = sr.ReadLine().Split(',');
-                    String name = row[0];
-                    Int32 code = Int32.Parse(row[1], System.Globalization.NumberStyles.HexNumber);
-                    _teams.Add(new Team(name, code));
-                }
-            }
-            _teams.Add(TBD);
         }
 
         private Team(String name, Int32 code)
@@ -52,6 +42,38 @@ namespace Fixtures
         public Int32 Code
         {
             get { return _code; }
+        }
+
+        public static void LoadTeams(Int32 year)
+        {
+            StringReader sr;
+            if (year == 2012)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2012);
+            }
+            else if (year == 2013)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2013);
+            }
+            else
+            {
+                Debug.Assert(false, "Invalid year...Loading from 2012");
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2012);
+            }
+
+            _teams.Clear();
+            _teams.Add(TBD);
+            while (sr.Peek() >= 0)
+            {
+                string line = sr.ReadLine();
+                if (line == "" || line.Substring(0, 1) == "#") continue;
+
+                string[] row = line.Split(',');
+                String name = row[0];
+                Int32 code = Int32.Parse(row[1], System.Globalization.NumberStyles.HexNumber);
+                _teams.Add(new Team(name, code));
+            }
+
         }
 
         public static Team FindByCode(Int32 code)

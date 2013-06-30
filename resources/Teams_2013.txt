@@ -52,72 +52,72 @@ Sussex,0130
 Warwickshire,012D
 Worcestershire,0137
 Yorkshire,0135
-MCC (Three Day Friendly),00A7
-Cambridge UCCE (University Match),00BE
-Cardiff UCCE (University Match),00BC
-Durham UCCE (University Match),00BA
-Leeds UCCE (University Match),00BB
-Loughboro UCCE (University Match),00B9
-Oxford UCCE (University Match),00BD
-Derbyshire (Clydesdale Bank 40),015B
-Durham (Clydesdale Bank 40),015C
-Essex (Clydesdale Bank 40),015D
-Glamorgan (Clydesdale Bank 40),0162
-Gloucestershire (Clydesdale Bank 40),0163
-Hampshire (Clydesdale Bank 40),015E
-Kent (Clydesdale Bank 40),0154
-Lancashire (Clydesdale Bank 40),015F
-Leicestershire (Clydesdale Bank 40),0164
-Middlesex (Clydesdale Bank 40),0165
-Netherlands CC (Clydesdale Bank 40),0155
-Northamptonshire (Clydesdale Bank 40),0156
-Nottinghamshire (Clydesdale Bank 40),0157
-Scotland CC (Clydesdale Bank 40),0160
-Somerset (Clydesdale Bank 40),0166
-Surrey (Clydesdale Bank 40),0161
-Sussex (Clydesdale Bank 40),0158
-Unicorns (Clydesdale Bank 40),0167
-Warwickshire (Clydesdale Bank 40),0159
-Worcestershire (Clydesdale Bank 40),015A
-Yorkshire (Clydesdale Bank 40),0168
-Derbyshire (Friends Life T20),0001
-Durham (Friends Life T20),0002
-Essex (Friends Life T20),0003
-Glamorgan (Friends Life T20),0004
-Gloucestershire (Friends Life T20),0005
-Hampshire (Friends Life T20),0006
-Kent (Friends Life T20),0007
-Lancashire (Friends Life T20),0008
-Leicestershire (Friends Life T20),0009
-Middlesex (Friends Life T20),000A
-Northamptonshire (Friends Life T20),000B
-Nottinghamshire (Friends Life T20),000C
-Somerset (Friends Life T20),000D
-Surrey (Friends Life T20),000E
-Sussex (Friends Life T20),000F
-Warwickshire (Friends Life T20),0010
-Worcestershire (Friends Life T20),0011
-Yorkshire (Friends Life T20),0012
+MCC,00A7
+Cambridge UCCE,00BE
+Cardiff UCCE,00BC
+Durham UCCE,00BA
+Leeds UCCE,00BB
+Loughboro UCCE,00B9
+Oxford UCCE,00BD
+Derbyshire (OD),015B
+Durham (OD),015C
+Essex (OD),015D
+Glamorgan (OD),0162
+Gloucestershire (OD),0163
+Hampshire (OD),015E
+Kent (OD),0154
+Lancashire (OD),015F
+Leicestershire (OD),0164
+Middlesex (OD),0165
+Netherlands CC (OD),0155
+Northamptonshire (OD),0156
+Nottinghamshire (OD),0157
+Scotland CC (OD),0160
+Somerset (OD),0166
+Surrey (OD),0161
+Sussex (OD),0158
+Unicorns (OD),0167
+Warwickshire (OD),0159
+Worcestershire (OD),015A
+Yorkshire (OD),0168
+Derbyshire (T20),0001
+Durham (T20),0002
+Essex (T20),0003
+Glamorgan (T20),0004
+Gloucestershire (T20),0005
+Hampshire (T20),0006
+Kent (T20),0007
+Lancashire (T20),0008
+Leicestershire (T20),0009
+Middlesex (T20),000A
+Northamptonshire (T20),000B
+Nottinghamshire (T20),000C
+Somerset (T20),000D
+Surrey (T20),000E
+Sussex (T20),000F
+Warwickshire (T20),0010
+Worcestershire (T20),0011
+Yorkshire (T20),0012
 New South Wales,0035
 Queensland,0036
 South Australia,0037
 Tasmania,0038
 Victoria,0039
 Western Australia,003A
-Adelaide (Big Bash League),00CC
-Brisbane (Big Bash League),00CD
-Hobart (Big Bash League),00CE
-Melbourne Green (Big Bash League),00D0
-Melbourne Red (Big Bash League),00CF
-Perth (Big Bash League),00D1
-Sydney Green (Big Bash League),00D3
-Sydney Red (Big Bash League),00D2
-Bangalore (Indian Premier League),00C8
-Chennai (Indian Premier League),00C9
-Delhi (Indian Premier League),00C3
-Hyderabad (Indian Premier League),00C2
-Kolkata (Indian Premier League),00C6
-Mumbai (Indian Premier League),00C5
-Pune (Indian Premier League),00CA
-Punjab (Indian Premier League),00C4
-Rajasthan (Indian Premier League),00C7
+Adelaide (BBL),00CC
+Brisbane (BBL),00CD
+Hobart (BBL),00CE
+Melbourne Green (BBL),00D0
+Melbourne Red (BBL),00CF
+Perth (BBL),00D1
+Sydney Green (BBL),00D3
+Sydney Red (BBL),00D2
+Bangalore (IPL),00C8
+Chennai (IPL),00C9
+Delhi (IPL),00C3
+Hyderabad (IPL),00C2
+Kolkata (IPL),00C6
+Mumbai (IPL),00C5
+Pune (IPL),00CA
+Punjab (IPL),00C4
+Rajasthan (IPL),00C7

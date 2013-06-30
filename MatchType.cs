@@ -26,21 +26,6 @@ namespace Fixtures
         {
             _types = new List<MatchType>();
             _typesByCode = new Dictionary<byte, MatchType>();
-            using (StringReader sr = new StringReader(Fixtures.Properties.Resources.MatchTypes))
-            {
-                while (sr.Peek() >= 0)
-                {
-                    string line = sr.ReadLine();
-                    if (line.Substring(0, 1) == "#") continue;
-
-                    string[] row = line.Split(',');
-                    Byte code = Byte.Parse(row[1], System.Globalization.NumberStyles.HexNumber);
-                    Int32 numDays = Int32.Parse(row[2]);
-                    MatchType format = new MatchType(row[0], code, numDays);
-                    _types.Add(format);
-                    _typesByCode.Add(code, format);
-                }
-            }
         }
 
         private MatchType(String name, Byte code, Int32 numDays)
@@ -63,6 +48,40 @@ namespace Fixtures
         public Int32 NumDays
         {
             get { return _numDays; }
+        }
+
+        public static void LoadTypes(Int32 year)
+        {
+            StringReader sr;
+            if (year == 2012) 
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2012);
+            }
+            else if (year == 2013)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2013);
+            }
+            else
+            {
+                Debug.Assert(false, "Invalid year...Loading from 2012");
+                sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2012);
+            }
+
+            _types.Clear();
+            _typesByCode.Clear();
+
+            while (sr.Peek() >= 0)
+            {
+                string line = sr.ReadLine();
+                if (line == "" || line.Substring(0, 1) == "#") continue;
+
+                string[] row = line.Split(',');
+                Byte code = Byte.Parse(row[1], System.Globalization.NumberStyles.HexNumber);
+                Int32 numDays = Int32.Parse(row[2]);
+                MatchType format = new MatchType(row[0], code, numDays);
+                _types.Add(format);
+                _typesByCode.Add(code, format);
+            }
         }
 
         public static MatchType FindByCode(Byte code)

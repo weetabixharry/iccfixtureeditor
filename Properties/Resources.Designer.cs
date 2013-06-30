@@ -175,9 +175,37 @@ namespace Fixtures.Properties {
         ///World T20,0A,1
         ///.
         /// </summary>
-        internal static string MatchTypes {
+        internal static string MatchTypes_2012 {
             get {
-                return ResourceManager.GetString("MatchTypes", resourceCulture);
+                return ResourceManager.GetString("MatchTypes_2012", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Big Bash League,06,1
+        ///Champions Trophy,0E,1
+        ///Clydesdale Bank 40,02,1
+        ///Commonwealth Bank Series,0B,1
+        ///County Championship,00,4
+        ///Friends Life T20,03,1
+        ///Indian Premier League,07,1
+        ///One Day Friendly,10,1
+        ///One Day International,0D,1
+        ///Ryobi One Day Cup,05,1
+        ///Sheffield Shield,04,4
+        ///T20 International,13,1
+        ///Test Match,0C,5
+        ///Three Day Friendly,0F,3
+        ///Triangular Series,0B,1
+        ///University Match,12,3
+        ///World Cup,09,1
+        ///World T20,0A,1
+        ///
+        ///.
+        /// </summary>
+        internal static string MatchTypes_2013 {
+            get {
+                return ResourceManager.GetString("MatchTypes_2013", resourceCulture);
             }
         }
         
@@ -207,9 +235,40 @@ namespace Fixtures.Properties {
         ///West Indies (World Cup),018F
         ///Zimbabwe (Wo [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Teams {
+        internal static string Teams_2012 {
             get {
-                return ResourceManager.GetString("Teams", resourceCulture);
+                return ResourceManager.GetString("Teams_2012", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Australia,002B
+        ///Bangladesh,0033
+        ///England,002C
+        ///India,002D
+        ///New Zealand,002E
+        ///Pakistan,002F
+        ///South Africa ,0030
+        ///Sri Lanka,0031
+        ///West Indies,0032
+        ///Zimbabwe,0034
+        ///Australia (World Cup),018C
+        ///Bangladesh (World Cup),0189
+        ///Canada (World Cup),0191
+        ///England (World Cup),0185
+        ///India (World Cup),018D
+        ///Namibia (World Cup),0192
+        ///New Zealand (World Cup),0188
+        ///Pakistan (World Cup),0187
+        ///Scotland (World Cup),018B
+        ///South Africa  (World Cup),0186
+        ///Sri Lanka (World Cup),018E
+        ///UAE (World Cup),018A
+        ///West Indies (World Cup),018 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Teams_2013 {
+            get {
+                return ResourceManager.GetString("Teams_2013", resourceCulture);
             }
         }
     }
