@@ -15,10 +15,8 @@ Features
 * Change match type
 * Change series length
 * Change teams
-* Supported versions:
-..* International Cricket Captain 2012
-..* International Cricket Captain 2013
-        
+* Supports International Cricket Captain 2012 and 2013
+
 Editing Details
 ===============
 * Fixture files for International Cricket Captain 2012 are stored in fxt folder in game directory (e.g. C:/Program Files (x86)/Childish Things/International Cricket Captain 2012/fxt)
