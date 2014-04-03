@@ -16,8 +16,8 @@ Features
 * Change series length
 * Change teams
 * Supported versions:
-** International Cricket Captain 2012
-** International Cricket Captain 2013
+..* International Cricket Captain 2012
+..* International Cricket Captain 2013
         
 Editing Details
 ===============
