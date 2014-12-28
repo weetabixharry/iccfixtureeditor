@@ -81,6 +81,14 @@ namespace Fixtures
             }
         }
 
+        public Byte TypeCode
+        {
+            get
+            {
+                return _type.Code;
+            }
+        }
+
         public Byte MatchInSeries
         {
             get
@@ -123,6 +131,14 @@ namespace Fixtures
             }
         }
 
+        public Int32 HostTeamCode
+        {
+            get
+            {
+                return _hostTeam.Code;
+            }
+        }
+
         public Team VisitorTeam
         {
             get { return _visitorTeam; }
@@ -131,6 +147,14 @@ namespace Fixtures
                 _visitorTeam = value;
                 _manager.UpdateMatchProperty(this, MatchProperty.VisitorTeam);
                 NotifyPropertyChanged("VisitorTeam");
+            }
+        }
+
+        public Int32 VisitorTeamCode
+        {
+            get
+            {
+                return _visitorTeam.Code;
             }
         }
 

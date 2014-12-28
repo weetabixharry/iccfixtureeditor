@@ -151,6 +151,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     CellStyle="{StaticResource LeftAlignedCellStyle}"
                     MinWidth="130"/>
                 <DataGridTextColumn
+                    Header="TypeCode"
+                    Binding="{Binding TypeCode, StringFormat=\{0:X2\}}"
+                    IsReadOnly="True"
+                    Visibility="Hidden"
+                    CellStyle="{StaticResource LeftAlignedCellStyle}"
+                    />
+                <DataGridTextColumn
                     Header="Match" 
                     Binding="{Binding MatchInSeries, UpdateSourceTrigger=PropertyChanged}" 
                     CellStyle="{StaticResource RightAlignedCellStyle}"
@@ -165,11 +172,25 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     SelectedItemBinding="{Binding HostTeam, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
+                <DataGridTextColumn
+                    Header="HostCode"
+                    Binding="{Binding HostTeamCode, StringFormat=\{0:X4\}}"
+                    IsReadOnly="True"
+                    Visibility="Hidden"
+                    CellStyle="{StaticResource LeftAlignedCellStyle}"
+                    />
                 <DataGridComboBoxColumn
                     Header="Visitor"
                     SelectedItemBinding="{Binding VisitorTeam, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
+                <DataGridTextColumn
+                    Header="VisitorCode"
+                    Binding="{Binding VisitorTeamCode, StringFormat=\{0:X4\}}"
+                    IsReadOnly="True"
+                    Visibility="Hidden"
+                    CellStyle="{StaticResource LeftAlignedCellStyle}"
+                    />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
