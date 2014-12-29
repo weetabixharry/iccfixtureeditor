@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("About ICC Fixture Editor")]
-[assembly: AssemblyDescription(@"Please see the project homepage or PlanetCricket forums for support or if you wish to contribute to the project. Special thanks to mrtwisties on PlanetCricket for decoding the fixture file.")]
+[assembly: AssemblyDescription(@"Please see the project homepage or PlanetCricket forums for support or if you wish to contribute to the project. Special thanks to mrtwisties on PlanetCricket his help in decoding the fixture file.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ICC Fixture Editor")]
-[assembly: AssemblyCopyright("The MIT License (MIT)\nCopyright © 2013 Isura Edirisinghe")]
+[assembly: AssemblyCopyright("The MIT License (MIT)\nCopyright © 2014 Isura Edirisinghe")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
