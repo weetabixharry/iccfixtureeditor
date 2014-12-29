@@ -55,6 +55,9 @@ namespace Fixtures
             InitializeFirstMatchHeader();
             InitializeMatchDataTemplate();
             InitializeHeadersAndRefs();
+#if(DEBUG)
+            LogMatches();
+#endif
         }
 
         public DateTime FirstDate
@@ -76,6 +79,7 @@ namespace Fixtures
                 SetMatchForHeaderAndRefs(header, match);
                 matches.Add(match);
             }
+
             _firstMatch = matches[0];
             return matches;
         }
@@ -718,6 +722,29 @@ namespace Fixtures
         {
             _fileContents[startAddress] = (Byte)(value % 256);
             _fileContents[startAddress + 1] = (Byte)(value / 256);
+        }
+
+        public void LogMatches()
+        {
+            String fileName = Path.GetFileName(_filePath);
+            Int32 index = fileName.IndexOf(".");
+            if (index > 0)
+                fileName = fileName.Substring(0, index);
+
+            using (StreamWriter sw = new StreamWriter("..\\..\\tmp\\" + fileName + ".csv"))
+            {
+                foreach (MatchHeader header in _matchHeaders)
+                {
+                    Int32 id = header.Id;
+                    Byte type = _fileContents[header.AddressOfType];
+                    Int32 host = GetNextTwoBytes(header.AddressOfHostTeam);
+                    Int32 visitor = GetNextTwoBytes(header.AddressOfVisitorTeam);
+                    Int32 day = GetNextTwoBytes(header.AddressOfDay);
+                    DateTime date = ConvertToDate(day);
+
+                    sw.WriteLine("{0},{1},{2:X},{3:X},{4:X}", id, date.ToShortDateString(), type, host, visitor);
+                }
+            }
         }
     }
 }
