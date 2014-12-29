@@ -1,0 +1,135 @@
+Australia,002B
+Bangladesh,0033
+England,002C
+India,002D
+New Zealand,002E
+Pakistan,002F
+South Africa,0030
+Sri Lanka,0031
+West Indies,0032
+Zimbabwe,0034
+Scotland,00B0
+Australia (World Cup),01E9
+Bangladesh (World Cup),01ED
+England (World Cup),01F0
+India (World Cup),01EA
+New Zealand (World Cup),01F2
+Pakistan (World Cup),01EB
+South Africa (World Cup),01F1
+Sri Lanka (World Cup),01EC
+West Indies (World Cup),01F3
+Zimbabwe (World Cup),01F4
+Associate #1 (World Cup),01EE
+Associate #2 (World Cup),01EF
+Associate #3 (World Cup),01F5
+Associate #4 (World Cup),01F6
+Australia (World T20),0322
+Bangladesh (World T20),01F9
+England (World T20),0327
+India (World T20),0323
+New Zealand (World T20),0320
+Pakistan (World T20),0326
+South Africa  (World T20),0325
+Sri Lanka (World T20),0321
+West Indies (World T20),0328
+Zimbabwe (World T20),01FD
+Associate #1 (World T20),01FA
+Associate #2 (World T20),01FB
+Associate #3 (World T20),01FC
+Associate #4 (World T20),01FE
+Associate #5 (World T20),01FF
+Associate #6 (World T20),0200
+Australia (Champions Trophy),0209
+England (Champions Trophy),020D
+India (Champions Trophy),020A
+New Zealand (Champions Trophy),020F
+Pakistan (Champions Trophy),020B
+South Africa (Champions Trophy),020E
+Sri Lanka (Champions Trophy),020C
+West Indies (Champions Trophy),0210
+Derbyshire,019A
+Durham,0191
+Essex,019C
+Glamorgan,01A1
+Gloucestershire,019F
+Hampshire,019D
+Kent,01A0
+Lancashire,0198
+Leicestershire,01A2
+Middlesex,0195
+Northamptonshire,0199
+Nottinghamshire,0197
+Somerset,0196
+Surrey,019B
+Sussex,0193
+Warwickshire,0194
+Worcestershire,019E
+Yorkshire,0192
+MCC,00A7
+Ireland CC,0014
+Scotland CC,0015
+Cambridge UCCE,00BE
+Cardiff UCCE,00BC
+Durham UCCE,00BA
+Leeds UCCE,00BB
+Loughboro UCCE,00B9
+Oxford UCCE,00BD
+Derbyshire (OD),01B9
+Durham (OD),01C2
+Essex (OD),01BF
+Glamorgan (OD),01C3
+Gloucestershire (OD),01BB
+Hampshire (OD),01B8
+Kent (OD),01C1
+Lancashire (OD),01BA
+Leicestershire (OD),01BC
+Middlesex (OD),01C8
+Northamptonshire (OD),01BD
+Nottinghamshire (OD),01C4
+Somerset (OD),01C9
+Surrey (OD),01C7
+Sussex (OD),01C5
+Warwickshire (OD),01C6
+Worcestershire (OD),01BE
+Yorkshire (OD),01C0
+Derbyshire (T20),0001
+Durham (T20),0002
+Essex (T20),0003
+Glamorgan (T20),0004
+Gloucestershire (T20),0005
+Hampshire (T20),0006
+Kent (T20),0007
+Lancashire (T20),0008
+Leicestershire (T20),0009
+Middlesex (T20),000A
+Northamptonshire (T20),000B
+Nottinghamshire (T20),000C
+Somerset (T20),000D
+Surrey (T20),000E
+Sussex (T20),000F
+Warwickshire (T20),0010
+Worcestershire (T20),0011
+Yorkshire (T20),0012
+New South Wales,0035
+Queensland,0036
+South Australia,0037
+Tasmania,0038
+Victoria,0039
+Western Australia,003A
+Adelaide (BBL),00CC
+Brisbane (BBL),00CD
+Hobart (BBL),00CE
+Melbourne Green (BBL),00D0
+Melbourne Red (BBL),00CF
+Perth (BBL),00D1
+Sydney Green (BBL),00D3
+Sydney Red (BBL),00D2
+Bangalore (IPL),00C8
+Chennai (IPL),00C9
+Delhi (IPL),00C3
+Hyderabad (IPL),00C2
+Kolkata (IPL),00C6
+Mumbai (IPL),00C5
+Pune (IPL),00CA
+Punjab (IPL),00C4
+Rajasthan (IPL),00C7

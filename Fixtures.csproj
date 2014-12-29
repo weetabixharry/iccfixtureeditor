@@ -227,6 +227,12 @@
     <Resource Include="resources\Teams_2012.txt" />
     <Resource Include="resources\Teams_2013.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\MatchTypes_2014.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Teams_2014.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

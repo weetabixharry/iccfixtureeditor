@@ -106,8 +106,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 </Button>
                 <GroupBox Header="Version">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton GroupName="Version" IsChecked="True" Checked="Version2012_Checked">2012</RadioButton>
-                        <RadioButton GroupName="Version" Checked="Version2013_Checked">2013 (Experimental)</RadioButton>
+                        <RadioButton GroupName="Version" IsChecked="True" Checked="Version2014_Checked">2014</RadioButton>
+                        <RadioButton GroupName="Version" Checked="Version2013_Checked">2013</RadioButton>
+                        <RadioButton GroupName="Version" Checked="Version2012_Checked">2012</RadioButton>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>

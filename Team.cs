@@ -55,8 +55,13 @@ namespace Fixtures
             {
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2013);
             }
+            else if (year == 2014)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
+            }
             else
             {
+                // TODO: Make default 2014?
                 Debug.Assert(false, "Invalid year...Loading from 2012");
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2012);
             }

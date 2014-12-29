@@ -109,6 +109,12 @@ namespace Fixtures
             Team.LoadTeams(2013);
         }
 
+        private void Version2014_Checked(object sender, RoutedEventArgs e)
+        {
+            MatchType.LoadTypes(2014);
+            Team.LoadTeams(2014);
+        }
+
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             // Uses a constructor that takes a parent window for the AboutBox.
