@@ -44,26 +44,21 @@ namespace Fixtures
             get { return _code; }
         }
 
-        public static void LoadTeams(Int32 year)
+        public static void LoadTeams(Int32 version)
         {
             StringReader sr;
-            if (year == 2012)
+            if (version == 2012)
             {
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2012);
             }
-            else if (year == 2013)
+            else if (version == 2013)
             {
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2013);
             }
-            else if (year == 2014)
-            {
-                sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
-            }
             else
             {
-                // TODO: Make default 2014?
-                Debug.Assert(false, "Invalid year...Loading from 2012");
-                sr = new StringReader(Fixtures.Properties.Resources.Teams_2012);
+                Debug.Assert(version == 2014);
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
             }
 
             _teams.Clear();
