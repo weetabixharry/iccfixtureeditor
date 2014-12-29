@@ -1,5 +1,5 @@
 bin/
 obj/
-temp/
+tmp/
 Fixtures.suo
 *.xlsm
