@@ -23,12 +23,15 @@ namespace Fixtures
     public partial class MainWindow : Window
     {
         public static ObservableCollection<Match> gMatches;
+        private const int DEFAULT_VERSION = 2014;
         private FixtureFileManager _fixtureFileMgr;
 
         public MainWindow()
         {
             InitializeComponent();
             gMatches = (Matches)Resources["matches"];
+            MatchType.LoadTypes(DEFAULT_VERSION);
+            Team.LoadTeams(DEFAULT_VERSION);
         }
 
         //private void ToolBar_Loaded(object sender, RoutedEventArgs e)
@@ -97,22 +100,17 @@ namespace Fixtures
             _fixtureFileMgr.UpdateIds(matches);            
         }
 
-        private void Version2012_Checked(object sender, RoutedEventArgs e)
+        private void Version_Selected(object sender, RoutedEventArgs e)
         {
-            MatchType.LoadTypes(2012);
-            Team.LoadTeams(2012);
-        }
-
-        private void Version2013_Checked(object sender, RoutedEventArgs e)
-        {
-            MatchType.LoadTypes(2013);
-            Team.LoadTeams(2013);
-        }
-
-        private void Version2014_Checked(object sender, RoutedEventArgs e)
-        {
-            MatchType.LoadTypes(2014);
-            Team.LoadTeams(2014);
+            var selectedItem = (versionComboBox.SelectedItem as ComboBoxItem);
+            // Hack: Since we want to set a default version this event is fired at startup but the
+            // content is null for some reason.
+            if (selectedItem.Content != null)
+            {
+                var version = Int32.Parse(selectedItem.Content.ToString());
+                MatchType.LoadTypes(version);
+                Team.LoadTeams(version);
+            }
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
