@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns:local="clr-namespace:Fixtures"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Title="ICC Fixture Editor (1.1.0)" Height="590" Width="800" MinHeight="525" MinWidth="700"
+        Title="ICC Fixture Editor (1.2.0)" Height="590" Width="800" MinHeight="525" MinWidth="700"
         Icon="resources/Application.png">
 
     <Window.Resources>
