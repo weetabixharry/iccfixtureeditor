@@ -67,16 +67,16 @@
     <ApplicationIcon>resources\Application.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7938106C371DA5FFE3D7FB31EF741397C7B6DC60</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2267C76EE9C7B231709E56923C536CBF06CB77B2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Fixtures_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FixtureEditor.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -162,6 +162,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="FixtureEditor.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
