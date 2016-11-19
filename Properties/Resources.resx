@@ -136,6 +136,9 @@
   <data name="MatchTypes_2014" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\MatchTypes_2014.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="MatchTypes_2016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\matchtypes_2016.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="Teams_2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Teams_2012.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -144,5 +147,8 @@
   </data>
   <data name="Teams_2014" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Teams_2014.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Teams_2016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\teams_2016.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

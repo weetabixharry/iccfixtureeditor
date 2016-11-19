@@ -23,7 +23,7 @@ namespace Fixtures
     public partial class MainWindow : Window
     {
         public static ObservableCollection<Match> gMatches;
-        private const int DEFAULT_VERSION = 2014;
+        private const int DEFAULT_VERSION = 2016;
         private FixtureFileManager _fixtureFileMgr;
 
         public MainWindow()

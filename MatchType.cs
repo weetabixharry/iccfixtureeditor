@@ -61,9 +61,13 @@ namespace Fixtures
             {
                 sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2013);
             }
-            else
+            else if (version == 2014)
             {
                 sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2014);
+            }
+            else
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2016);
             }
 
             _types.Clear();

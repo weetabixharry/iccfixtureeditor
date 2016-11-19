@@ -1,0 +1,224 @@
+Australia,002b
+Bangladesh,0033
+England,002c
+India,002d
+New Zealand,002e
+Pakistan,002f
+South Africa,0030
+Sri Lanka,0031
+West Indies,0032
+Zimbabwe,0034
+Australia CT,0209
+Bangladesh CT,0210
+England CT,020e
+India CT,020a
+New Zealand CT,020b
+Pakistan CT,020f
+South Africa CT,020d
+Sri Lanka CT,020c
+Associate #1 WT20,01fa
+Associate #2 WT20,01fb
+Associate #3 WT20,01fc
+Associate #4 WT20,01fe
+Associate #5 WT20,0200
+Associate #6 WT20,01ff
+Australia WT20,0322
+Bangladesh WT20,01f9
+England WT20,0326
+India WT20,0321
+New Zealand WT20,0325
+Pakistan WT20,0327
+South Africa WT20,0320
+Sri Lanka WT20,0323
+West Indies WT20,0328
+Zimbabwe WT20,01fd
+Associate #1 WC,01ee
+Associate #2 WC,01f5
+Associate #3 WC,01ef
+Associate #4 WC,01f6
+Australia WC,01e9
+Bangladesh WC,01f3
+England WC,01f1
+India WC,01ea
+New Zealand WC,01eb
+Pakistan WC,01f2
+South Africa WC,01f0
+Sri Lanka WC,01ec
+West Indies WC,01ed
+Zimbabwe WC,01f4
+Derbyshire,01a1
+Durham,0194
+Essex,019c
+Glamorgan,019d
+Gloucestershire,019f
+Hampshire,0197
+Kent,01a0
+Lancashire,0199
+Leicestershire,01a2
+Middlesex,0192
+Northamptonshire,019e
+Nottinghamshire,0193
+Somerset,0196
+Surrey,0198
+Sussex,019a
+Warwickshire,0195
+Worcestershire,019b,
+Yorkshire,0191
+Cambridge MCCU,00be
+Cardiff MCCU,00bc
+Durham MCCU,00ba
+Leeds MCCU,00bb
+Loughborough MCCU,00b9
+Oxford MCCU,00bd
+Derbyshire OD,01b8
+Durham OD,01b9
+Essex OD,01c1
+Glamorgan OD,01c2
+Gloucestershire OD,01c3
+Hampshire OD,01c4
+Kent OD,01c5
+Lancashire OD,01ba
+Leicestershire OD,01bb
+Leicestershire OD,01bb
+Northamptonshire OD,01bc
+Nottinghamshire OD,01bd
+Somerset OD,01c7
+Surrey OD,01c8
+Sussex OD,01c9
+Warwickshire OD,01be
+Worcestershire OD,01bf
+Yorkshire OD,01c0
+Derbyshire T20,0001
+Durham T20,0002
+Essex T20,0003
+Glamorgan T20,0004
+Gloucestershire T20,0005
+Hampshire T20,0006
+Kent T20,0007
+Lancashire T20,0008
+Leicestershire T20,0009
+Middlesex T20,000a
+Northamptonshire T20,000b
+Nottinghamshire T20,000c
+Somerset T20,000d
+Surrey T20,000e
+Sussex T20,000f
+Warwickshire T20,0010
+Worcestershire T20,0011
+Yorkshire T20,0012
+New South Wales,0035
+Queensland,0036
+South Australia,0037
+Tasmania,0038
+Victoria,0039
+Western Australia,003a
+Cricket Australia XI,003b
+Adelaide T20,00cc
+Brisbane T20,00cd
+Hobart T20,00ce
+Melbourne Green T20,00d0
+Melbourne Red T20,00cf
+Perth T20,00d1
+Sydney Green T20,00d3
+Sydney Red T20,00d2
+Bangalore IPL,00c8
+Delhi IPL,00c3
+Gujarat IPL,00c7
+Hyderabad IPL,00c2
+Kolkata IPL,00c6
+Mumbai IPL,00c5
+Pune IPL,00c9
+Punjab IPL,00c4
+Andhra,022c
+Assam,021b
+Baroda,0228
+Bengal,021a
+Delhi CC,021c
+Goa,0230
+Gujarat CC,0225
+Haryana,022b
+Himachal Pradesh,022d
+Hyderabad CC,0232
+Jammu and Kashmir,0231
+Jharkhand,022a
+Karnataka,021d
+Kerala CC,022f
+Madhya Pradesh,0224
+Maharashtra,021f
+Mumbai CC,0222
+Odisha,0220
+Punjab CC,0223
+Railways,0229
+Rajasthan CC,021e
+Saurashtra,0221
+Services,022e
+Tamil Nadu,0227
+Tripura,0233
+Uttar Pradesh,0226
+Vidarbha,0219
+Andhra OD,0246
+Assam OD,023a
+Baroda OD,0244
+Bengal OD,024d
+Delhi OD,0243
+Goa OD,024e
+Gujarat OD,023c
+Haryana OD,023f
+Himachal Pradesh OD,0249
+Hyderabad OD,0239
+Jammu and Kashmir OD,0241
+Jharkhand OD,023b
+Karnataka OD,023d
+Kerala OD,0240
+Madhya OD,024c
+Maharashtra OD,0245
+Mumbai OD,0236
+Odisha OD,0247
+Punjab OD,0235
+Railways OD,023e
+RajasthanOD,0238
+Saurashtra OD,024b
+Services OD,0237
+Tamil Nadu OD,0234
+Tripura OD,0248
+Uttar Pradesh OD,024a
+Vidarbha OD,0242
+Andhra T20,0263
+Assam T20,0261
+Baroda T20,025e
+Bengal T20,0254
+Delhi T20,025d
+Goa T20,0262
+Gujarat T20,0250
+Haryana T20,0255
+Himachal Pradesh T20,0252
+Hyderabad T20,0253
+Jammu and Kashmir T20,025c
+Jharkhand T20,0257
+Karnataka T20,0267
+Kerala T20,0256
+Madhya Pradesh T20,025f
+Maharashtra T20,0266
+Mumbai T20,0265
+Odisha T20,0269
+Punjab T20,0259
+Railways T20,0260
+Rajasthan T20,025a
+Saurashtra T20,0258
+Services T20,0268
+Tamil Nadu T20,0251
+Tripura T20,025b
+Uttar Pradesh T20,0264
+Vidarbha T20,024f
+Bloemfontein,00eb
+Cape Town,00db
+Durban,003c
+Johannesburg,003e
+Port Elizabeth,0114
+Pretoria,003f
+Auckland,0056
+Canterbury,006a
+Central Districts,0059
+Northern Districts,0057
+Otago,0055
+Wellington,0058

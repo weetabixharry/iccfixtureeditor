@@ -209,28 +209,58 @@ namespace Fixtures.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Big Bash League,6,1
+        ///   Looks up a localized string similar to Big Bash League,06,1
         ///Champions Trophy,0E,1
-        ///Clydesdale Bank 40,2,1
-        ///County Championship,0,4
-        ///Friends Life T20,3,1
-        ///Indian Premier League,7,1
+        ///Royal London One Day Cup,02,1
+        ///County Championship,00,4
+        ///Natwest T20 Blast,03,1
+        ///Indian Premier League,07,1
         ///One Day Friendly,10,1
         ///One Day International,0D,1
-        ///Ryobi One Day Cup,5,1
-        ///Sheffield Shield,4,4
+        ///Ryobi One Day Cup,05,1
+        ///Sheffield Shield,04,4
+        ///T20 Friendly,1A,1
         ///T20 International,13,1
         ///Test Match,0C,5
         ///Three Day Friendly,0F,3
         ///ODI Triangular,0B,1
         ///University Match,12,3
-        ///World Cup,9,1
+        ///World Cup,09,1
         ///World T20,0A,1
         ///.
         /// </summary>
         internal static string MatchTypes_2014 {
             get {
                 return ResourceManager.GetString("MatchTypes_2014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to County Championship,00,4
+        ///One Day Cup (ENG),02,1
+        ///Twenty Over Trophy (ENG),03,1
+        ///Sheffield Shield,04,4
+        ///One Day Cup (AUS),05,1
+        ///Twenty Over Trophy (AUS),06,1
+        ///Ranji Trophy,07,4
+        ///One Day Cup (IND),08,1
+        ///Twenty Over Trophy (IND),09,1
+        ///Indian Premier League,0A,1
+        ///Plunket Shield,0B,4
+        ///One Day Cup (NZ),0C,1
+        ///Twenty Over Trophy (NZ),0D,1
+        ///Sunfoil Series,0E,4
+        ///One Day Cup (SA),0F,1
+        ///Twenty Over Cup (SA),10,1
+        ///World Cup,12,1
+        ///World Twenty20,13,1
+        ///Autralian Tri-Series,14,1
+        ///Test Match,15,5
+        ///One Day International,16, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MatchTypes_2016 {
+            get {
+                return ResourceManager.GetString("MatchTypes_2016", resourceCulture);
             }
         }
         
@@ -299,33 +329,41 @@ namespace Fixtures.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Australia,002B
-        ///Bangladesh,33
+        ///Bangladesh,0033
         ///England,002C
         ///India,002D
         ///New Zealand,002E
         ///Pakistan,002F
-        ///South Africa ,30
-        ///Sri Lanka,31
-        ///West Indies,32
-        ///Zimbabwe,34
-        ///Australia (World Cup),018C
-        ///Bangladesh (World Cup),189
-        ///Canada (World Cup),191
-        ///England (World Cup),185
-        ///India (World Cup),018D
-        ///Namibia (World Cup),192
-        ///New Zealand (World Cup),188
-        ///Pakistan (World Cup),187
-        ///Scotland (World Cup),018B
-        ///South Africa  (World Cup),186
-        ///Sri Lanka (World Cup),018E
-        ///UAE (World Cup),018A
-        ///West Indies (World Cup),018F
-        ///Zimbabwe (Worl [rest of string was truncated]&quot;;.
+        ///South Africa,0030
+        ///Sri Lanka,0031
+        ///West Indies,0032
+        ///Zimbabwe,0034
+        ///Scotland,00B0
+        ///Australia (World Cup),01E9
+        ///Bangladesh (World Cup),01ED
+        ///England (World Cup),01F0
+        ///India (World Cup),01EA
+        ///New Zealand (World Cup),01F2
+        ///Pakistan (World Cup),01EB
+        ///South Africa (World Cup),01F1
+        ///Sri Lanka (World Cup),01EC
+        ///West Indies (World Cup),01F3
+        ///Zimbabwe (World Cup),01F4
+        ///Associate #1 (World Cup),01EE
+        ///Associate #2 (World Cup),0 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Teams_2014 {
             get {
                 return ResourceManager.GetString("Teams_2014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Teams_2016 {
+            get {
+                return ResourceManager.GetString("Teams_2016", resourceCulture);
             }
         }
     }

@@ -106,7 +106,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 </Button>
                 <GroupBox Header="Version">
                     <ComboBox Name="versionComboBox" SelectionChanged="Version_Selected" VerticalAlignment="Center" Width="64">
-                        <ComboBoxItem IsSelected="True">2014</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">2016</ComboBoxItem>
+                        <ComboBoxItem>2014</ComboBoxItem>
                         <ComboBoxItem>2013</ComboBoxItem>
                         <ComboBoxItem>2012</ComboBoxItem>
                     </ComboBox>

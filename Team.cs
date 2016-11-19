@@ -19,6 +19,7 @@ namespace Fixtures
     {
         public static Team TBD;
         private static List<Team> _teams;
+        private const bool DISCOVER_TEAMS = true;
         private String _name;
         private Int32 _code;
 
@@ -55,10 +56,14 @@ namespace Fixtures
             {
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2013);
             }
+            else if (version == 2014)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
+            }
             else
             {
-                Debug.Assert(version == 2014);
-                sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
+                Debug.Assert(version == 2016);
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2016);
             }
 
             _teams.Clear();
@@ -73,7 +78,6 @@ namespace Fixtures
                 Int32 code = Int32.Parse(row[1], System.Globalization.NumberStyles.HexNumber);
                 _teams.Add(new Team(name, code));
             }
-
         }
 
         public static Team FindByCode(Int32 code)
@@ -81,7 +85,7 @@ namespace Fixtures
             Team result = _teams.Where(t => t._code == code).FirstOrDefault();
             if (result == null)
             {
-                result = TBD;
+                result = DISCOVER_TEAMS ? new Team("Unknown", code) : TBD;
             }
             return result;
         }
