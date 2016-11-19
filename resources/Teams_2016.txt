@@ -64,6 +64,7 @@ Sussex,019a
 Warwickshire,0195
 Worcestershire,019b,
 Yorkshire,0191
+MCC,00A7
 Cambridge MCCU,00be
 Cardiff MCCU,00bc
 Durham MCCU,00ba
@@ -79,7 +80,7 @@ Hampshire OD,01c4
 Kent OD,01c5
 Lancashire OD,01ba
 Leicestershire OD,01bb
-Leicestershire OD,01bb
+Middlesex OD,01c6
 Northamptonshire OD,01bc
 Nottinghamshire OD,01bd
 Somerset OD,01c7
@@ -170,13 +171,13 @@ Jammu and Kashmir OD,0241
 Jharkhand OD,023b
 Karnataka OD,023d
 Kerala OD,0240
-Madhya OD,024c
+Madhya Pradesh OD,024c
 Maharashtra OD,0245
 Mumbai OD,0236
 Odisha OD,0247
 Punjab OD,0235
 Railways OD,023e
-RajasthanOD,0238
+Rajasthan OD,0238
 Saurashtra OD,024b
 Services OD,0237
 Tamil Nadu OD,0234

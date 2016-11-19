@@ -19,7 +19,7 @@ namespace Fixtures
     {
         public static Team TBD;
         private static List<Team> _teams;
-        private const bool DISCOVER_TEAMS = true;
+        private const bool DISCOVER_TEAMS = false;
         private String _name;
         private Int32 _code;
 
