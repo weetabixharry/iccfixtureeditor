@@ -153,6 +153,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     CellStyle="{StaticResource LeftAlignedCellStyle}"
                     MinWidth="130"/>
                 <DataGridTextColumn
+                    x:Name="typeCode"
                     Header="TypeCode"
                     Binding="{Binding TypeCode, StringFormat=\{0:X2\}}"
                     IsReadOnly="True"
@@ -175,6 +176,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
                 <DataGridTextColumn
+                    x:Name="hostCode"
                     Header="HostCode"
                     Binding="{Binding HostTeamCode, StringFormat=\{0:X4\}}"
                     IsReadOnly="True"
@@ -187,6 +189,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     ItemsSource="{x:Static local:Team.Teams}"
                     MinWidth="150"/>
                 <DataGridTextColumn
+                    x:Name="visitorCode"
                     Header="VisitorCode"
                     Binding="{Binding VisitorTeamCode, StringFormat=\{0:X4\}}"
                     IsReadOnly="True"

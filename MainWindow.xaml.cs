@@ -29,6 +29,7 @@ namespace Fixtures
         public MainWindow()
         {
             InitializeComponent();
+            showDebugColumns();
             gMatches = (Matches)Resources["matches"];
             MatchType.LoadTypes(DEFAULT_VERSION);
             Team.LoadTeams(DEFAULT_VERSION);
@@ -118,6 +119,15 @@ namespace Fixtures
             // Uses a constructor that takes a parent window for the AboutBox.
             WPFAboutBox1 about = new WPFAboutBox1(this);
             about.ShowDialog();
+        }
+
+        private void showDebugColumns()
+        {
+#if DEBUG
+            typeCode.Visibility = Visibility.Visible;
+            hostCode.Visibility = Visibility.Visible;
+            visitorCode.Visibility = Visibility.Visible;
+#endif
         }
     }
 
