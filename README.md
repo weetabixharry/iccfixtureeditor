@@ -15,11 +15,12 @@ Features
 * Change match type
 * Change series length
 * Change teams
-* Supports International Cricket Captain 2012 through 2014.
+* Supports International Cricket Captain 2012, 2013, 2014, and 2016.
 
 Editing Details
 ===============
-* Fixture files for International Cricket Captain 2014 are stored in fxt folder in game directory (e.g. C:/Program Files (x86)/Steam/steamapps/common/Cricket Captain 2014/fxt)
+* Remember to backup the original files before editing!
+* Fixture files for International Cricket Captain 2016 are stored in fxt folder in game directory (e.g. C:/Program Files (x86)/Steam/steamapps/common/Cricket Captain 2016/fxt)
 * Fixture file is loaded at the beginning of a new season
-* The file numbering determines the season (e.g. fix13.fxt is full career 2013-14 season and int15.fxt is international only 2015-16 season)
-* You can rename the files in order to load a schedule from a different season (e.g. Rename int17.fxt to int12.txt and a new game will use the 2017-18 schedule)
+* The file numbering determines the season (e.g. fix16.fxt is full career 2016-17 season and int16.fxt is international only 2016-17 season)
+* You can rename the files in order to load a schedule from a different season (e.g. Rename int19.fxt to int16.txt and a new game will use the 2019-20 schedule)
