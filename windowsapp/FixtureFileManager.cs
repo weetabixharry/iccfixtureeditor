@@ -17,7 +17,10 @@ namespace Fixtures
 {
     public class FixtureFileManager
     {
-        private const Int32 StartOffset = 6;
+        private const Int32 StartForwardOffset = 6;
+        private const Int32 YearBackwardOffset = 97;
+        private const Int32 BaseYear = 2012;
+        private const Byte BaseYearByte = 220;
         private const Int32 DayDataLength = 6;
         private const Int32 MatchDataLength = 42;
         private const Int32 MatchRefLength = 2;
@@ -25,9 +28,10 @@ namespace Fixtures
         private const Int32 StartMatchId = 2;
 
         private readonly string _filePath;
-        private readonly DateTime _dayZero;
-        private readonly DateTime _firstDate;
-        private readonly DateTime _lastDate;
+        private Int32 _year;
+        private DateTime _dayZero;
+        private DateTime _firstDate;
+        private DateTime _lastDate;
         private List<Byte> _fileContents;
         private List<DayHeader> _dayHeaders;
         private readonly List<Byte> _firstMatchSpecialHeader;
@@ -40,9 +44,6 @@ namespace Fixtures
         public FixtureFileManager(String filePath)
         {
             _filePath = filePath;
-            _dayZero = new DateTime(ParseStartYear(filePath), 3, 31);
-            _firstDate = new DateTime(ParseStartYear(filePath), 4, 1);
-            _lastDate = new DateTime(ParseStartYear(filePath) + 1, 3, 30);
 
             _fileContents = new List<byte>(File.ReadAllBytes(filePath)); // To do: Handle IO exceptions
             _dayHeaders = new List<DayHeader>();
@@ -52,6 +53,7 @@ namespace Fixtures
             _matchRefs = new List<MatchRef>();
             _nextMatchId = StartMatchId;
 
+            InitializeDates();
             InitializeFirstMatchHeader();
             InitializeMatchDataTemplate();
             InitializeHeadersAndRefs();
@@ -94,6 +96,23 @@ namespace Fixtures
         public void RemoveExistingMatch(Match match)
         {
             RemoveMatch(match);
+        }
+
+        public void UpdateYear(Int32 year)
+        {
+            Byte yearOffset = Convert.ToByte(year - BaseYear);
+            _fileContents[_fileContents.Count - 1 - YearBackwardOffset] = Convert.ToByte(BaseYearByte + yearOffset);
+
+            Int32 yearDiff = year - _year;
+            _year = year;
+            _dayZero = _dayZero.AddYears(yearDiff);
+            _firstDate = _firstDate.AddYears(yearDiff);
+            _lastDate = _lastDate.AddYears(yearDiff);
+        }
+
+        public Int32 GetYear()
+        {
+            return _year;
         }
 
         public void UpdateIds(IEnumerable<Match> matches)
@@ -192,24 +211,14 @@ namespace Fixtures
             File.WriteAllBytes(_filePath, _fileContents.ToArray());
         }
 
-        private Int32 ParseStartYear(String filePath)
+        private void InitializeDates()
         {
-            // Last 2 characters of fixture file should be 2 digit year (i.e 2012 -> 12).
-            Int32 startYear = 2012;
-            String fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            if (fileName.Length >= 2)
-            {
-                try
-                {
-                    String fileSuffix = fileName.Substring(fileName.Length - 2);
-                    startYear = 2000 + Int32.Parse(fileSuffix);
-                }
-                catch (FormatException)
-                {
-                    startYear = 2012;
-                }
-            }
-            return startYear;
+            Byte yearByte = _fileContents[_fileContents.Count - 1 - YearBackwardOffset];
+            Int32 year = BaseYear + (yearByte - BaseYearByte);
+            _year = year;
+            _dayZero = new DateTime(year, 3, 31);
+            _firstDate = new DateTime(year, 4, 1);
+            _lastDate = new DateTime(year + 1, 3, 30);
         }
 
         private void InitializeFirstMatchHeader()
@@ -248,7 +257,7 @@ namespace Fixtures
             // and visiting team. The match ref is 2 bytes encoding the (id + 1) of the match. The
             // match ref appears for days 2+ for multi day matches.
             bool firstMatch = true;
-            Int32 currentAddress = StartOffset;
+            Int32 currentAddress = StartForwardOffset;
             while (currentAddress < _fileContents.Count)
             {
                 if (!HasMatchesAfter(currentAddress))
@@ -731,7 +740,7 @@ namespace Fixtures
             if (index > 0)
                 fileName = fileName.Substring(0, index);
 
-            using (StreamWriter sw = new StreamWriter("..\\..\\tmp\\" + fileName + ".csv"))
+            using (StreamWriter sw = new StreamWriter("..\\..\\..\\tmp\\" + fileName + ".csv"))
             {
                 foreach (MatchHeader header in _matchHeaders)
                 {

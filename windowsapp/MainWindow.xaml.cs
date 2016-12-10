@@ -23,6 +23,7 @@ namespace Fixtures
     public partial class MainWindow : Window
     {
         public static ObservableCollection<Match> gMatches;
+        private const int BASE_YEAR = 2012;
         private const int DEFAULT_VERSION = 2016;
         private FixtureFileManager _fixtureFileMgr;
 
@@ -58,6 +59,7 @@ namespace Fixtures
                 FilePath.Text = dlg.FileName;
                 _fixtureFileMgr = new FixtureFileManager(dlg.FileName);
                 PopulateMatches();
+                yearComboBox.SelectedIndex = _fixtureFileMgr.GetYear() - BASE_YEAR + 1;
             }
         }
 
@@ -101,11 +103,27 @@ namespace Fixtures
             _fixtureFileMgr.UpdateIds(matches);            
         }
 
+        private void Year_Selected(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (yearComboBox.SelectedItem as ComboBoxItem);
+            if (selectedItem != null && selectedItem.Content != null)
+            {
+                var year = Int32.Parse(selectedItem.Content.ToString());
+
+                _fixtureFileMgr.UpdateYear(year);
+
+                Matches matches = (Matches)Resources["matches"];
+                foreach (Match m in matches)
+                {
+                    m.UpdateYear(year);
+                }
+            }
+        }
+
         private void Version_Selected(object sender, RoutedEventArgs e)
         {
             var selectedItem = (versionComboBox.SelectedItem as ComboBoxItem);
-            // Hack: Since we want to set a default version this event is fired at startup but the
-            // content is null for some reason.
+            // This event is fired at startup but the content is null even though we set a default value
             if (selectedItem.Content != null)
             {
                 var version = Int32.Parse(selectedItem.Content.ToString());

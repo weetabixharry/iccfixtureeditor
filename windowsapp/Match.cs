@@ -158,6 +158,12 @@ namespace Fixtures
             }
         }
 
+        public void UpdateYear(Int32 year)
+        {
+            SetDate(_date.AddYears(year - _date.Year));
+            NotifyPropertyChanged("Date");
+        }
+
         public void SetDate(DateTime date)
         {
             // This function is needed because FixtureFileManager cannot set the match date through

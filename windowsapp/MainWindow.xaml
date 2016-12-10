@@ -104,7 +104,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         <Label Content="Remove" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
-                <GroupBox Header="Version">
+                <GroupBox Header="Season" Margin="2,0,0,0" Padding="1,0,1,0">
+                    <ComboBox Name="yearComboBox" SelectionChanged="Year_Selected" VerticalAlignment="Center" Width="64">
+                        <ComboBoxItem IsSelected="True"></ComboBoxItem>
+                        <ComboBoxItem>2012</ComboBoxItem>
+                        <ComboBoxItem>2013</ComboBoxItem>
+                        <ComboBoxItem>2014</ComboBoxItem>
+                        <ComboBoxItem>2015</ComboBoxItem>
+                        <ComboBoxItem>2016</ComboBoxItem>
+                        <ComboBoxItem>2017</ComboBoxItem>
+                        <ComboBoxItem>2018</ComboBoxItem>
+                        <ComboBoxItem>2019</ComboBoxItem>
+                        <ComboBoxItem>2020</ComboBoxItem>
+                        <ComboBoxItem>2021</ComboBoxItem>
+                        <ComboBoxItem>2022</ComboBoxItem>
+                        <ComboBoxItem>2023</ComboBoxItem>
+                        <ComboBoxItem>2024</ComboBoxItem>
+                        <ComboBoxItem>2025</ComboBoxItem>
+                        <ComboBoxItem>2026</ComboBoxItem>
+                        <ComboBoxItem>2027</ComboBoxItem>
+                        <ComboBoxItem>2028</ComboBoxItem>
+                        <ComboBoxItem>2029</ComboBoxItem>
+                        <ComboBoxItem>2030</ComboBoxItem>
+                        <ComboBoxItem>2031</ComboBoxItem>
+                        <ComboBoxItem>2032</ComboBoxItem>
+                        <ComboBoxItem>2033</ComboBoxItem>
+                        <ComboBoxItem>2034</ComboBoxItem>
+                        <ComboBoxItem>2035</ComboBoxItem>
+                        <ComboBoxItem>2036</ComboBoxItem>
+                    </ComboBox>
+                </GroupBox>
+                <GroupBox Header="Version" Margin="10,0,0,0" Padding="1,0,1,0">
                     <ComboBox Name="versionComboBox" SelectionChanged="Version_Selected" VerticalAlignment="Center" Width="64">
                         <ComboBoxItem IsSelected="True">2016</ComboBoxItem>
                         <ComboBoxItem>2014</ComboBoxItem>
