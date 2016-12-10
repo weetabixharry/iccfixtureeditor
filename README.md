@@ -9,6 +9,7 @@ Features
 ========
 * Edit fixtures in all career modes.
 * Create custom tours and tournaments
+* Change the year of the schedule
 * Add matches
 * Remove matches
 * Change match dates
