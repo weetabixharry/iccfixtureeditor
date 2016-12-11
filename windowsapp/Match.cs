@@ -160,7 +160,9 @@ namespace Fixtures
 
         public void UpdateYear(Int32 year)
         {
-            SetDate(_date.AddYears(year - _date.Year));
+            int effectiveYear = _date.Month >= 4 ? year : year + 1;
+            SetDate(new DateTime(effectiveYear, _date.Month, _date.Day));
+
             NotifyPropertyChanged("Date");
         }
 
