@@ -23,8 +23,8 @@ namespace Fixtures
     public partial class MainWindow : Window
     {
         public static ObservableCollection<Match> gMatches;
-        private const int BASE_YEAR = 2012;
-        private const int DEFAULT_VERSION = 2016;
+        private const int BASE_YEAR = 1993;
+        private const int DEFAULT_VERSION = 2021;
         private FixtureFileManager _fixtureFileMgr;
 
         public MainWindow()
@@ -59,6 +59,10 @@ namespace Fixtures
                 FilePath.Text = dlg.FileName;
                 _fixtureFileMgr = new FixtureFileManager(dlg.FileName);
                 PopulateMatches();
+                
+                // WEETABIXHARRY: Print out some debug info
+                // System.Diagnostics.Debug.Print("YEAR = " + _fixtureFileMgr.GetYear().ToString());
+
                 yearComboBox.SelectedIndex = _fixtureFileMgr.GetYear() - BASE_YEAR + 1;
             }
         }

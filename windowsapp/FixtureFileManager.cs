@@ -19,10 +19,10 @@ namespace Fixtures
     {
         private const Int32 StartForwardOffset = 6;
         private const Int32 YearBackwardOffset = 97;
-        private const Int32 BaseYear = 2012;
+        private const Int32 BaseYear = 2013;
         private const Byte BaseYearByte = 220;
         private const Int32 DayDataLength = 6;
-        private const Int32 MatchDataLength = 42;
+        private const Int32 MatchDataLength = 50;
         private const Int32 MatchRefLength = 2;
         private const Int32 FirstMatchSpecialHeaderLength = 13;
         private const Int32 StartMatchId = 2;
@@ -265,6 +265,12 @@ namespace Fixtures
                     break;
                 }
                 DayHeader currDayHeader = new DayHeader(currentAddress);
+                
+                // WEETABIXHARRY: Print out some debug info
+                //System.Windows.MessageBox.Show("New day at 0x" + currentAddress.ToString("X") + "(" + currentAddress.ToString() + ") = " +
+                //    _fileContents[currentAddress].ToString("X2") + " " + _fileContents[currentAddress+1].ToString("X2") + " " +
+                //    _fileContents[currentAddress + 2].ToString("X2") + " " + _fileContents[currentAddress + 3].ToString("X2"));
+                
                 _dayHeaders.Add(currDayHeader);
                 if (GetNumberMatches(currDayHeader) == 0)
                 {
@@ -324,12 +330,22 @@ namespace Fixtures
         private bool HasMatchesAfter(Int32 address)
         {
             // Return true if there are new match definitions after the specified address.
-            // The string of 14 consecutive CD bytes is the way to flag new match definitions.
+            // Up until CC 2020, the string of 14 consecutive CD bytes was the way to detect new
+            // match definitions. However, in CC 2021, this has changed. Ideally, we should try to
+            // preserve backwards compatibility, but this field is also defined in the template
+            // resource file. TODO: Look into this.
             for (Int32 currentAddress = address; currentAddress < _fileContents.Count; currentAddress++)
             {
-                // We are lazy so should be safe to check only the first 4 bytes. TODO: Check all 14 bytes.
-                if (_fileContents[currentAddress] == 0xCD && _fileContents[currentAddress + 1] == 0xCD &&
-                    _fileContents[currentAddress + 2] == 0xCD && _fileContents[currentAddress + 3] == 0xCD)
+                // We are lazy so should be safe to check only the first few bytes.
+                if (_fileContents[currentAddress] == 0x00 && _fileContents[currentAddress + 1] == 0xff &&
+                    _fileContents[currentAddress + 2] == 0x34 && _fileContents[currentAddress + 3] == 0x77 &&
+                    _fileContents[currentAddress + 4] == 0x00 && _fileContents[currentAddress + 5] == 0x00 &&
+                    _fileContents[currentAddress + 6] == 0x00 && _fileContents[currentAddress + 7] == 0x00 &&
+                    _fileContents[currentAddress + 8] == 0x00 && _fileContents[currentAddress + 9] == 0x00 &&
+                    _fileContents[currentAddress + 10] == 0x00 && _fileContents[currentAddress + 11] == 0x00 &&
+                    _fileContents[currentAddress + 12] == 0x00 && _fileContents[currentAddress + 13] == 0x00 &&
+                    _fileContents[currentAddress + 14] == 0x00 && _fileContents[currentAddress + 15] == 0x00 &&
+                    _fileContents[currentAddress + 16] == 0x01 && _fileContents[currentAddress + 17] == 0x00)
                 {
                     return true;
                 }

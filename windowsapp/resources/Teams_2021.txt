@@ -1,0 +1,286 @@
+Derbyshire T20,0001
+Durham T20,0002
+Essex T20,0003
+Glamorgan T20,0004
+Gloucestershire T20,0005
+Hampshire T20,0006
+Kent T20,0007
+Lancashire T20,0008
+Leicestershire T20,0009
+Middlesex T20,000A
+Northamptonshire T20,000B
+Nottinghamshire T20,000C
+Somerset T20,000D
+Surrey T20,000E
+Sussex T20,000F
+Warwickshire T20,0010
+Worcestershire T20,0011
+Yorkshire T20,0012
+Australia,002B
+England,002C
+India,002D
+New Zealand,002E
+Pakistan,002F
+South Africa,0030
+Sri Lanka,0031
+West Indies,0032
+Bangladesh,0033
+Zimbabwe,0034
+Ireland,0035
+Afghanistan,0036
+New South Wales,0037
+Queensland,0038
+South Australia,0039
+Tasmania,003A
+Victoria,003B
+Western Australia,003C
+Otago,0055
+Auckland,0056
+Northern Districts,0057
+Wellington,0058
+Central Districts,0059
+Canterbury,006A
+Netherlands,00AA
+Scotland,00B0
+Loughborough MCCU,00B9
+Durham MCCU,00BA
+Leeds MCCU,00BB
+Cardiff MCCU,00BC
+Oxford MCCU,00BD
+Cambridge MCCU,00BE
+Hyderabad IPL,00C2
+Delhi IPL,00C3
+Punjab IPL,00C4
+Mumbai IPL,00C5
+Kolkata IPL,00C6
+Chennai IPL,00C7
+Bangalore IPL,00C8
+Rajasthan IPL,00C9
+Khyber Pakhtunkhwa,00EA
+Balochistan,0145
+Guyana,014E
+Jamaica,014F
+Windward Islands,0150
+Trinidad and Tobago,0151
+Barbados,0152
+Leeward Islands,0153
+Comilla BPL, 0155
+Chattogram BPL, 0156
+Dhaka BPL, 0157
+Rangpur BPL, 0158
+Khulna BPL, 0159
+Rajshshi BPL, 015A
+Sindh,0197
+Sylhet BPL,01C9
+Birmingham Phoenix,026F
+(London Blue) London Spirit,0270
+Manchester Originals,0271
+(Leeds) Northern Superchargers,0272
+(London Green) Oval Invincibles,0273
+(Southampton) Southern Brave,0274
+(Nottingham) Trent Rockets,0275
+(Cardiff) Welsh Fire,0276
+Central Punjab,0277
+Southern Punjab,0278
+Northern,0279
+Essex,02BD
+Somerset,02BE
+Hampshire,02BF
+Kent,02C0
+Yorkshire,02C1
+Surrey,02C2
+Warwickshire,02C3
+Lancashire,02C4
+Northamptonshire,02C5
+Gloucestershire,02C6
+Nottinghamshire,02C7
+Glamorgan,02C8
+Durham,02C9
+Sussex,02CA
+Derbyshire,02CB
+Middlesex,02CC
+Worcestershire,02CD
+Leicestershire,02CE
+Durham One Day,02E4
+Essex One Day,02E5
+Gloucestershire One Day,02E6
+Hampshire One Day,02E7
+Kent One Day,02E8
+Lancashire One Day,02E9
+Middlesex One Day,02EA
+Sussex One Day,02EB
+Worcestershire One Day,02EC
+Derbyshire One Day,02ED
+Glamorgan One Day,02EE
+Leicestershire One Day,02EF
+Northamptonshire One Day,02F0
+Durham One Day,02F1
+Somerset One Day,02F2
+Surrey One Day,02F3
+Warwickshire One Day,02F4
+Yorkshire One Day,02F5
+Sri Lanka T20,0327
+Ireland T20,0328
+Netherlands T20,0329
+Namibia T20,032A
+Bangladesh T20,032B
+Scotland T20,032C
+Papua New Guinea T20,032D
+Oman T20,032E
+Baroda FC,034B
+Himachal Pradesh FC,034C
+Karnataka FC,034D
+Madhya Pradesh FC,034E
+Mumbai CC FC,034F
+Railways FC,0350
+Saurashtra FC,0351
+Tamil Nadu FC,0352
+Uttar Pradesh FC,0353
+Andhra FC,0354
+Bengal FC,0355
+Delhi CC FC,0356
+Gujarat CC FC,0357
+Hyderabad CC FC,0358
+Kerala CC FC,0359
+Punjab CC FC,035A
+Rajasthan CC FC,035B
+Vidarbha FC,035C
+Assam FC,035D
+Chhattisgarh FC,035E
+Haryana FC,035F
+Jammu and Kashmir FC,0360
+Jharkhand FC,0361
+Maharashtra FC,0362
+Odisha FC,0363
+Services FC,0364
+Tripura FC,0365
+Uttarakhand FC,0366
+Arunachal Pradesh FC,0367
+Bihar FC,0368
+Chandigarh FC,0369
+Goa FC,036A
+Manipur FC,036B
+Meghalaya FC,036C
+Mizoram FC,036D
+Nagaland FC,036E
+Puducherry FC,036F
+Sikkim FC,0370
+Andhra OD,0371
+Chhattisgarh OD,0372
+Goa OD,0373
+Hyderabad CC OD,0374
+Jharkhand OD,0375
+Karnataka OD,0376
+Kerala CC OD,0377
+Mumbai CC OD,0378
+Saurashtra OD,0379
+Baroda OD,037A
+Delhi CC OD,037B
+Haryana OD,037C
+Himachal Pradesh OD,037D
+Maharashtra OD,037E
+Odisha OD,037F
+Punjab CC OD,0380
+Uttar Pradesh OD,0381
+Vidarbha OD,0382
+Bengal OD,0383
+Bihar OD,0384
+Gujarat CC OD,0385
+Jammu and Kashmir OD,0386
+Madhya Pradesh OD,0387
+Railways OD,0388
+Rajasthan CC OD,0389
+Services OD,038A
+Tamil Nadu OD,038B
+Tripura OD,038C
+Arunachal Pradesh OD,038D
+Assam OD,038E
+Chandigarh OD,038F
+Manipur OD,0390
+Meghalaya OD,0391
+Mizoram OD,0392
+Nagaland OD,0393
+Puducherry OD,0394
+Sikkim OD,0395
+Uttarakhand OD,0396
+Karnataka T20,0397
+Baroda T20,0398
+Services T20,0399
+Andhra T20,039A
+Uttarakhand T20,039B
+Goa T20,039C
+Bihar T20,039D
+Tamil Nadu T20,039E
+Rajasthan CC T20,039F
+Vidarbha T20,03A0
+Uttar Pradesh T20,03A1
+Kerala CC T20,03A2
+Tripura T20,03A3
+Manipur T20,03A4
+Maharashtra T20,03A5
+Punjab CC T20,03A6
+Chhattisgarh T20,03A7
+Chandigarh T20,03A8
+Hyderabad CC T20,03A9
+Railways T20,03AA
+Himachal Pradesh T20,03AB
+Arunachal Pradesh T20,03AC
+Delhi CC T20,03AD
+Jharkhand T20,03AE
+Gujarat CC T20,03AF
+Jammu and Kashmir T20,03B0
+Odisha T20,03B1
+Saurashtra T20,03B2
+Nagaland T20,03B3
+Sikkim T20,03B4
+Haryana T20,03B5
+Assam T20,03B6
+Mumbai CC T20,03B7
+Madhya Pradesh T20,03B8
+Puducherry T20,03B9
+Bengal T20,03BA
+Meghalaya T20,03BB
+Mizoram T20,03BC
+T.B.D.,03BD
+T.B.D.,03BE
+T.B.D.,03BF
+T.B.D.,03C0
+T.B.D.,03C1
+T.B.D.,03C2
+T.B.D.,03C3
+T.B.D.,03C4
+T.B.D.,03C5
+T.B.D.,03C6
+T.B.D.,03E9
+T.B.D.,03EA
+T.B.D.,03EB
+T.B.D.,03EC
+T.B.D.,03ED
+T.B.D.,03EE
+T.B.D.,03EF
+T.B.D.,03F0
+T.B.D.,03F1
+T.B.D.,03F2
+T.B.D.,03F3
+T.B.D.,03F4
+T.B.D.,03F5
+T.B.D.,03F6
+T.B.D.,03F7
+T.B.D.,03F8
+T.B.D.,03F9
+T.B.D.,03FA
+England T20,07D0
+Australia T20,07D1
+South Africa T20,07D2
+West Indies T20,07D3
+T.B.D.,07D4
+T.B.D.,07D5
+India T20,07D6
+Pakistan T20,07D7
+New Zealand T20,07D8
+Afghanistan T20,07D9
+T.B.D.,07DA
+T.B.D.,07DB
+T.B.D,0836
+T.B.D,0838
+T.B.D.,083C

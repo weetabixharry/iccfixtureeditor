@@ -53,7 +53,7 @@ namespace Fixtures
         public static void LoadTypes(Int32 version)
         {
             StringReader sr;
-            if (version == 2012) 
+            if (version == 2012)
             {
                 sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2012);
             }
@@ -65,9 +65,14 @@ namespace Fixtures
             {
                 sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2014);
             }
-            else
+            else if (version == 2016)
             {
                 sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2016);
+            }
+            else
+            {
+                Debug.Assert(version == 2021);
+                sr = new StringReader(Fixtures.Properties.Resources.MatchTypes_2021);
             }
 
             _types.Clear();
@@ -89,6 +94,10 @@ namespace Fixtures
 
         public static MatchType FindByCode(Byte code)
         {
+            // WEETABIXHARRY: Print out some debug info
+            // string St = _typesByCode.ContainsKey(code) ? "SUCCESS!" : "FAILURE!";
+            // Debug.Print(St + code.ToString("X2"));
+
             Debug.Assert(_typesByCode.ContainsKey(code));
             return _typesByCode[code];
         }

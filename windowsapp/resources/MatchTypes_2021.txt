@@ -1,0 +1,36 @@
+Aus One Day Cup,06,1
+Aus Tri-Series,FE,1
+Aus Twenty Over Trophy,07,1
+Bangladesh Premier League,1D,1
+Caribbean Premier League,15,1
+Champions Trophy,17,1
+County Championship,00,4
+Eng One Day Cup,02,1
+Eng Twenty Over Trophy,03,1
+Eng 100 Ball Trophy,04,1
+Ind One Day Cup,09,1
+Ind Twenty Over Trophy,0A,1
+Indian Premier League,0B,1
+Nzl One Day Cup,0D,1
+Nzl Twenty Over Trophy,0E,1
+One Day Friendly,27,1
+One Day International,24,1
+Pak One Day Cup,18,1
+Pakistan Twenty Over Trophy,19,1
+Pakistan Super League,1A,1
+Plunket Shield,0C,4
+Quaid-e-Azam Trophy,16,4
+Ranji Trophy,08,4
+Regional Four Day,13,4
+Sheffield Shield,05,4
+Sunfoil Series,0F,4
+Test Match,23,5
+Three Day Friendly,26,3
+Twenty20 International,2A,1
+University Match,29,3
+Win 50 Over,14,1
+World Cup,FF,1
+World Twenty20,20,1
+Momentum One Day Cup,10,1
+South African T20,11,1
+Mzansi Super League,12,1

@@ -60,10 +60,14 @@ namespace Fixtures
             {
                 sr = new StringReader(Fixtures.Properties.Resources.Teams_2014);
             }
+            else if (version == 2016)
+            {
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2016);
+            }
             else
             {
-                Debug.Assert(version == 2016);
-                sr = new StringReader(Fixtures.Properties.Resources.Teams_2016);
+                Debug.Assert(version == 2021);
+                sr = new StringReader(Fixtures.Properties.Resources.Teams_2021);
             }
 
             _teams.Clear();

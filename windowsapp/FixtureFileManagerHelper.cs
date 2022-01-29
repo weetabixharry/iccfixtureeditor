@@ -50,9 +50,9 @@ namespace Fixtures
         private const Int32 TypeOffset = 2;
         private const Int32 MatchInSeriesOffset = 3;
         private const Int32 SeriesLengthOffset = 4;
-        private const Int32 HostTeamOffset = 31;
-        private const Int32 VisitorTeamOffset = 33;
-        private const Int32 DayOffset = 37;
+        private const Int32 HostTeamOffset = 39;
+        private const Int32 VisitorTeamOffset = 41;
+        private const Int32 DayOffset = 45;
 
         private Match _match;
         private Int32 _id;      // match id should be unique
