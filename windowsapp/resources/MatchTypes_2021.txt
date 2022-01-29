@@ -29,8 +29,16 @@ Three Day Friendly,26,3
 Twenty20 International,2A,1
 University Match,29,3
 Win 50 Over,14,1
-World Cup,FF,1
 World Twenty20,20,1
 Momentum One Day Cup,10,1
 South African T20,11,1
 Mzansi Super League,12,1
+ODI Tournament,21,1
+World Cup,1F,1
+Champions Cup,25,1
+[UNKNOWN 0x2C],2C,1
+[UNKNOWN 0x2B],2B,1
+[UNKNOWN 0x2D],2D,1
+[UNKNOWN 0x2F],2F,1
+[UNKNOWN 0x2F],2E,1
+[UNKNOWN 0x30],30,1
