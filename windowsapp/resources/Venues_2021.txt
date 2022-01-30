@@ -1,0 +1,152 @@
+North London,0001
+Birmingham,0002
+Leeds,0003
+South London,0004
+Nottingham,0005
+Manchester,0006
+Southampton,0007
+Cardiff,0008
+Co Durham,0009
+Derby,000A
+Edinburgh,000B
+Chelmsford,000C
+Bristol,000D
+Canterbury,000E
+Leicester,000F
+Northampton,0010
+Taunton,0011
+Hove,0012
+Worcester,0013
+Brisbane,0014
+Adelaide,0015
+Perth,0016
+Victoria,0017
+Sydney,0018
+Hobart,0019
+Canberra,001A
+Delhi,001B
+Kolkata,001C
+Mumbai,001D
+Bangalore,001E
+Chennai,001F
+Wellington,0020
+Auckland,0021
+Christchurch,0022
+Wellington Port,0023
+Napier,0024
+Rawalpindi,0025
+Lahore,0026
+Karachi,0027
+Johannesburg,0028
+Cape Town,0029
+Pretoria,002A
+Durban,002B
+Port Elizabeth,002C
+Khetterama (Col),002D
+Colombo,002E
+Kandy,002F
+Hambantota,0030
+Dambulla,0031
+Jamaica,0032
+Trinidad,0033
+Antigua,0034
+Barbados,0035
+Guyana,0036
+St Lucia,0037
+St Kitts,0038
+Grenada,0039
+Bulawayo,003A
+Bloemfontein,003B
+East London,003C
+Potchefstroom,003D
+Kimberley,003E
+Paarl,003F
+Benoni,0040
+Pietermaritzburg,0041
+Harare,0042
+Mombasa,0043
+Dhaka,0044
+Chittagong,0045
+0046,0046
+Mohali,0047
+Rajasthan,0048
+Uppal,0049
+Dharamsala,004A
+Rohtak,004B
+Vadodara,004C
+Paharganj,004D
+Rajkot,004E
+Pune,004F
+Guwahati,0050
+Visakhapatnam,0051
+Agartala,0052
+Porvorim,0053
+Kochi,0054
+Nagpur,0055
+Kanpur,0056
+Ahmedabad,0057
+Srinagar,0058
+Ranchi,0059
+Palam,005A
+Cuttack,005B
+Indore,005C
+Dunedin,005D
+Hamilton,005E
+Windhoek,005F
+Amstelveen,0060
+Toronto,0061
+Florida,0062
+Bermuda,0063
+Dublin,0064
+Sharjah,0065
+Greater Noida,0066
+Hong Kong,0067
+Kirtipur,0068
+Nondescripts,0069
+Al Amerat,006A
+Raipur,006B
+Cave Hill,006C
+Barisal,006D
+Sylhet,006E
+Rajshahi,006F
+Rangpur,0070
+Khulna,0071
+Cox's Bazar,0072
+Peshawar,0073
+Multan,0074
+Quetta,0075
+Sialkot,0076
+Islamabad,0077
+Golra,0078
+Morgah,0079
+Mughalpura,007A
+Gizri,007B
+North Nazimabad,007C
+Hyderabad,007D
+Saidpur,007E
+Ayaz Town,007F
+Faisalabad,0080
+Nelson,0081
+Galle,0082
+Nelson Park,0083
+Auckland Oval,0084
+Beckenham,0085
+St Vincent,0086
+Abu Dhabi,0087
+Dubai,0088
+Showground,0089
+Docklands,008A
+Dhaneswar,008B
+Patna,008C
+Imphal,008D
+Shillong,008E
+Jorhat,008F
+Dimapur,0090
+Puducherry,0091
+Mt Maunganui,0092
+Bhubaneswar,0093
+Dehra Dun,0094
+Perth Stadium,0095
+Witbank,0096
+Modjadjiskloof,0097
+Oudtshoorn,0098
