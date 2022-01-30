@@ -119,6 +119,16 @@ Somerset One Day,02F2
 Surrey One Day,02F3
 Warwickshire One Day,02F4
 Yorkshire One Day,02F5
+England WC,0315
+South Africa WC,0316
+India WC,0317
+Australia WC,0318
+New Zealand WC,0319
+Pakistan WC,031A
+Bangladesh WC,031B
+Sri Lanka WC,031C
+Afghanistan WC,031D
+West Indies WC,031E
 Sri Lanka T20,0327
 Ireland T20,0328
 Netherlands T20,0329
