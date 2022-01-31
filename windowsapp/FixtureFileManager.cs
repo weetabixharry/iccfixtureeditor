@@ -253,7 +253,7 @@ namespace Fixtures
         {
             // Create the day headers, match headers, and match refs. Day data is 6 bytes long and
             // encodes the day number (starts at 1) and the number of matches played on that day. Match data is
-            // 42 bytes long and encodes the date, format, series length, match in series, home team,
+            // 50 bytes long and encodes the date, format, series length, match in series, home team,
             // and visiting team. The match ref is 2 bytes encoding the (id + 1) of the match. The
             // match ref appears for days 2+ for multi day matches.
             bool firstMatch = true;
@@ -334,21 +334,20 @@ namespace Fixtures
             // match definitions. However, in CC 2021, this has changed. Ideally, we should try to
             // preserve backwards compatibility, but this field is also defined in the template
             // resource file. TODO: Look into this.
-            for (Int32 currentAddress = address; currentAddress < _fileContents.Count; currentAddress++)
+            byte[] constPattern = { 0xff, 0x34, 0x77, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
+            for (Int32 currentAddress = address; currentAddress < _fileContents.Count - constPattern.Length + 1; currentAddress++)
             {
-                // We are lazy so should be safe to check only the first few bytes.
-                if (_fileContents[currentAddress] == 0x00 && _fileContents[currentAddress + 1] == 0xff &&
-                    _fileContents[currentAddress + 2] == 0x34 && _fileContents[currentAddress + 3] == 0x77 &&
-                    _fileContents[currentAddress + 4] == 0x00 && _fileContents[currentAddress + 5] == 0x00 &&
-                    _fileContents[currentAddress + 6] == 0x00 && _fileContents[currentAddress + 7] == 0x00 &&
-                    _fileContents[currentAddress + 8] == 0x00 && _fileContents[currentAddress + 9] == 0x00 &&
-                    _fileContents[currentAddress + 10] == 0x00 && _fileContents[currentAddress + 11] == 0x00 &&
-                    _fileContents[currentAddress + 12] == 0x00 && _fileContents[currentAddress + 13] == 0x00 &&
-                    _fileContents[currentAddress + 14] == 0x00 && _fileContents[currentAddress + 15] == 0x00 &&
-                    _fileContents[currentAddress + 16] == 0x01 && _fileContents[currentAddress + 17] == 0x00)
-                {
+                // Search for pattern at this offset.
+                bool patternFound = true;
+                for (Int32 patternIndex = 0; patternIndex < constPattern.Length; patternIndex++)
+                    if (_fileContents[currentAddress + patternIndex] != constPattern[patternIndex])
+                    {
+                        patternFound = false;
+                        break;
+                    }
+                // Return if pattern found.
+                if (patternFound)
                     return true;
-                }
             }
             return false;
         }
